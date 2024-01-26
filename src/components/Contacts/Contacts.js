@@ -26,6 +26,7 @@ import { ThemeContext } from '../../contexts/ThemeContext';
 import { socialsData } from '../../data/socialsData';
 import { contactsData } from '../../data/contactsData';
 import './Contacts.css';
+import { NoEncryption } from '@material-ui/icons';
 
 function Contacts() {
     const [open, setOpen] = useState(false);
@@ -129,36 +130,146 @@ function Contacts() {
 
     const classes = useStyles();
 
-    const handleContactForm = (e) => {
-        e.preventDefault();
-
-        if (name && email && message) {
-            if (isEmail(email)) {
-                const responseData = {
-                    name: name,
-                    email: email,
-                    message: message,
-                };
-
-                axios.post(contactsData.sheetAPI, responseData).then((res) => {
-                    console.log('success');
-                    setSuccess(true);
-                    setErrMsg('');
-
-                    setName('');
-                    setEmail('');
-                    setMessage('');
-                    setOpen(false);
-                });
+    /*
+    
+        const handleContactForm = (e) => {
+            e.preventDefault();
+    
+            if (name && email && message) {
+                if (isEmail(email)) {
+                    const responseData = {
+                        name: name,
+                        email: email,
+                        message: message,
+                    };
+    
+                    axios.post(contactsData.sheetAPI, responseData).then((res) => {
+                        console.log('success');
+                        setSuccess(true);
+                        setErrMsg('');
+    
+                        setName('');
+                        setEmail('');
+                        setMessage('');
+                        setOpen(false);
+                    });
+                } else {
+                    setErrMsg('E-mail inválido!');
+                    setOpen(true);
+                }
             } else {
-                setErrMsg('E-mail inválido!');
+                setErrMsg('Insira todos os campos!');
                 setOpen(true);
             }
-        } else {
-            setErrMsg('Insira todos os campos!');
-            setOpen(true);
+        };
+        
+    */
+
+  
+        // get all data in form and return object
+
+        function getFormData(form) {
+          var elements = form.elements;
+          var honeypot;
+      
+          var fields = Object.keys(elements).filter(function(k) {
+            if (elements[k].name === "honeypot") {
+              honeypot = elements[k].value;
+              return false;
+            }
+            return true;
+          }).map(function(k) {
+            if(elements[k].name !== undefined) {
+              return elements[k].name;
+            // special case for Edge's html collection
+            }else if(elements[k].length > 0){
+              return elements[k].item(0).name;
+            }
+          }).filter(function(item, pos, self) {
+            return self.indexOf(item) == pos && item;
+          });
+      
+          var formData = {};
+          fields.forEach(function(name){
+            var element = elements[name];
+            
+            // singular form elements just have one value
+            formData[name] = element.value;
+      
+            // when our element has multiple items, get their values
+            if (element.length) {
+              var data = [];
+              for (var i = 0; i < element.length; i++) {
+                var item = element.item(i);
+                if (item.checked || item.selected) {
+                  data.push(item.value);
+                }
+              }
+              formData[name] = data.join(', ');
+            }
+          });
+      
+          // add form-specific values into the data
+          formData.formDataNameOrder = JSON.stringify(fields);
+          formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
+          formData.formGoogleSendEmail
+            = form.dataset.email || ""; // no email by default
+      
+          return {data: formData, honeypot: honeypot};
         }
-    };
+      
+        function handleFormSubmit(event) {  // handles form submit without any jquery
+          event.preventDefault();           // we are submitting via xhr below
+          var form = event.target;
+          var formData = getFormData(form);
+          var data = formData.data;
+      
+          // If a honeypot field is filled, assume it was done so by a spam bot.
+          if (formData.honeypot) {
+            return false;
+          }
+      
+          disableAllButtons(form);
+          var url = form.action;
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', url);
+          // xhr.withCredentials = true;
+          xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+          xhr.onreadystatechange = function() {
+              if (xhr.readyState === 4 && xhr.status === 200) {
+                form.reset();
+                var formElements = form.querySelector(".form-elements")
+                if (formElements) {
+                  formElements.style.display = "none"; // hide form
+                }
+                var thankYouMessage = form.querySelector(".thankyou_message");
+                if (thankYouMessage) {
+                  thankYouMessage.style.display = "block";
+                }
+              }
+          };
+          // url encode form data for sending as post data
+          var encoded = Object.keys(data).map(function(k) {
+              return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+          }).join('&');
+          xhr.send(encoded);
+        }
+        
+        function loaded() {
+          // bind to the submit event of our form
+          var forms = document.querySelectorAll("form.contact__form");
+          for (var i = 0; i < forms.length; i++) {
+            forms[i].addEventListener("submit", handleFormSubmit, false);
+          }
+        };
+        document.addEventListener("DOMContentLoaded", loaded, false);
+      
+        function disableAllButtons(form) {
+          var buttons = form.querySelectorAll("button");
+          for (var i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = true;
+          }
+        }
 
     return (
         <div
@@ -170,51 +281,73 @@ function Contacts() {
                 <h1 style={{ color: theme.primary }}>Contatos</h1>
                 <div className='contacts-body'>
                     <div className='contacts-form'>
-                        <form onSubmit={handleContactForm}>
+                        <form id="Forms-Contato"
+                        method='POST'
+                        data-email="sarahsophiapinto@gmail.com"
+                        action="https://script.google.com/macros/s/AKfycbzuqPogDl8RMvYcp1lYY78bXky6jO75Ei0Btn1NxPjC3JAcpLD5VxVop8pdadtBm1YAmA/exec"
+                        class="contact__form">
                             <div className='input-container'>
-                                <label htmlFor='Name' className={classes.label}>
+                                <label
+                                //htmlFor='Name'
+                                for='name'
+                                className={classes.label}>
                                     Nome
                                 </label>
                                 <input
+                                    required
                                     placeholder='Insira seu nome'
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
+                                    //value={name}
+                                    //onChange={(e) => setName(e.target.value)}
                                     type='text'
                                     name='Name'
+                                    id='name'
                                     className={`form-input ${classes.input}`}
                                 />
                             </div>
                             <div className='input-container'>
                                 <label
-                                    htmlFor='Email'
+                                    //htmlFor='Email'
+                                    for='email'
                                     className={classes.label}
                                 >
                                     Email
                                 </label>
                                 <input
+                                    required
                                     placeholder='Insira seu e-mail'
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    //value={email}
+                                    //onChange={(e) => setEmail(e.target.value)}
                                     type='email'
                                     name='Email'
+                                    id='email'
                                     className={`form-input ${classes.input}`}
                                 />
                             </div>
                             <div className='input-container'>
                                 <label
-                                    htmlFor='Message'
+                                    //htmlFor='Message'
+                                    for='message'
                                     className={classes.label}
                                 >
                                     Mensagem
                                 </label>
                                 <textarea
+                                    required
                                     placeholder='Insira sua mensagem...'
-                                    value={message}
-                                    onChange={(e) => setMessage(e.target.value)}
+                                    //value={message}
+                                    //onChange={(e) => setMessage(e.target.value)}
                                     type='text'
                                     name='Message'
+                                    id='message'
                                     className={`form-message ${classes.message}`}
                                 />
+                            </div>
+                            
+                            <div class="thankyou_message" style={{
+                                display: 'none',
+
+                            }}>
+                               <p>Obrigada pelo contato! Retornaremos assim que possível!</p>
                             </div>
 
                             <div className='submit-btn'>
@@ -247,6 +380,7 @@ function Contacts() {
                                     </div>
                                 </button>
                             </div>
+
                         </form>
                         <Snackbar
                             anchorOrigin={{

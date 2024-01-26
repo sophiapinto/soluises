@@ -1,3 +1,10 @@
+.thankyou_message {
+    color: black;
+    font-size: 15px;
+    margin: 20px;
+    font-family:'var(--primaryFont)';
+}
+
 .contacts {
     min-height: 100vh;
     display: flex;
