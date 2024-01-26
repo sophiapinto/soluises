@@ -151,11 +151,11 @@ function Contacts() {
                     setOpen(false);
                 });
             } else {
-                setErrMsg('Invalid email');
+                setErrMsg('E-mail inválido!');
                 setOpen(true);
             }
         } else {
-            setErrMsg('Enter all the fields');
+            setErrMsg('Insira todos os campos!');
             setOpen(true);
         }
     };
@@ -167,16 +167,16 @@ function Contacts() {
             style={{ backgroundColor: theme.secondary }}
         >
             <div className='contacts--container'>
-                <h1 style={{ color: theme.primary }}>Contacts</h1>
+                <h1 style={{ color: theme.primary }}>Contatos</h1>
                 <div className='contacts-body'>
                     <div className='contacts-form'>
                         <form onSubmit={handleContactForm}>
                             <div className='input-container'>
                                 <label htmlFor='Name' className={classes.label}>
-                                    Name
+                                    Nome
                                 </label>
                                 <input
-                                    placeholder='John Doe'
+                                    placeholder='Insira seu nome'
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
                                     type='text'
@@ -192,7 +192,7 @@ function Contacts() {
                                     Email
                                 </label>
                                 <input
-                                    placeholder='John@doe.com'
+                                    placeholder='Insira seu e-mail'
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     type='email'
@@ -205,10 +205,10 @@ function Contacts() {
                                     htmlFor='Message'
                                     className={classes.label}
                                 >
-                                    Message
+                                    Mensagem
                                 </label>
                                 <textarea
-                                    placeholder='Type your message....'
+                                    placeholder='Insira sua mensagem...'
                                     value={message}
                                     onChange={(e) => setMessage(e.target.value)}
                                     type='text'
@@ -222,7 +222,7 @@ function Contacts() {
                                     type='submit'
                                     className={classes.submitBtn}
                                 >
-                                    <p>{!success ? 'Send' : 'Sent'}</p>
+                                    <p>{!success ? 'Enviar' : 'Enviado'}</p>
                                     <div className='submit-icon'>
                                         <AiOutlineSend
                                             className='send-icon'

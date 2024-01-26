@@ -1,8 +1,10 @@
 export const socialsData = {
-    github: 'https://github.com/',
+    github: 'https://github.com/sophiapinto',
+    linkedIn: 'https://www.linkedin.com/in/sarah-sophia-pinto-9031081a9/',
+    instagram: 'https://www.instagram.com/yllionpontom',
+    
+    /*
     facebook: 'https://www.facebook.com/',
-    linkedIn: 'https://www.linkedin.com/in',
-    instagram: 'https://www.instagram.com/',
     codepen: 'https://codepen.io/',
     twitter: 'https://twitter.com/',
     reddit: 'https://www.reddit.com/user/',
@@ -11,4 +13,5 @@ export const socialsData = {
     stackOverflow: 'https://stackoverflow.com/users/',
     gitlab: 'https://gitlab.com/',
     youtube: 'https://youtube.com/'
+    */
 }

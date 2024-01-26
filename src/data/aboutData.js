@@ -1,6 +1,6 @@
 export const aboutData = {
-    title: "Who I am",
-    description1: "My name's Jane. I'm a web designer and developer based in Southampton, UK.",
-    description2: "During the day I work as a lead developer at a local agency and in the evening I  work on freelance projects and utilize the time to built my own products. I spent my leisure hours writing articles and poetry. Right now I'm also trying a hand at machine learning and AI. I love to learn and explore new arenas.",
+    title: "Sobre mim",
+    description1: "Meu nome é Sophia Pinto. Sou design e desenvolvedora de software.",
+    description2: "Apaixonada por inovação, tecnolgia e metodologias ágies, sou graduanda em Ciência e tecnologia com ênfase em Engenharia de Computação pela Universidade Federal do Maranhão (UFMA), atuo como técnica em controle na maior mineradora do mundo.",
     image: 2
 }

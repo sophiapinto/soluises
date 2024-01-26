@@ -1,23 +1,30 @@
 export const experienceData = [
     {
         id: 1,
-        company: 'Globex Corporation',
-        jobtitle: 'Frontend Developer',
-        startYear: '2018',
-        endYear: '2019'
+        company: 'SciTech Application',
+        jobtitle: 'Desenvolvedora de Software',
+        startYear: '2019',
+        endYear: 'Presente'
     },
     {
         id: 2,
-        company: 'Vehement Capital Partners',
-        jobtitle: 'Backend Developer',
-        startYear: '2019',
-        endYear: '2020'
+        company: 'Vale S.A.',
+        jobtitle: 'Técnica em Controle de Integrado I',
+        startYear: '2021',
+        endYear: 'Presente'
     },
     {
         id: 3,
-        company: 'Wonka Industries',
-        jobtitle: 'Marketing',
+        company: 'Secretaria de Ciência e Tecnologia do Maranhão - SECTI MA',
+        jobtitle: 'Estagiária',
         startYear: '2020',
-        endYear: 'Present'
+        endYear: '2021'
+    },
+    {
+        id: 4,
+        company: 'Universidade Federal do Maranhão - UFMA',
+        jobtitle: 'Pesquisadora',
+        startYear: '2020',
+        endYear: '2021'
     },
 ]
