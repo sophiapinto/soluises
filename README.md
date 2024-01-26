@@ -4,8 +4,6 @@
 <img src="https://raw.githubusercontent.com/PhantomScript/asset-container/b26b0ebaaa13bec7fac796ee0b8296676df6ee0b/developer-portfolio/website.svg" alt="" width="450px"/>
 </p>
 
-## Want to create a professional portfolio but cannot figure out how to? Use Developer Portfolio and create your own personalised portfolio today! With multiple themes to choose from, our easily customisable, user friendly website is designed to cater to developers and freelancers alike.
-
 <br />
 
 ## Table of Contents :scroll:
@@ -43,11 +41,13 @@
 
 <br /><br />
 
+<!--
 # Demo :movie_camera:
 ![](https://raw.githubusercontent.com/PhantomScript/asset-container/main/developer-portfolio/demo.gif)
 ## View live demo [here](https://dev-portfolio-template.netlify.app/).
 
 <br />
+
 
 # Themes :art:
 ### Green :green_circle:
@@ -136,6 +136,9 @@ git --version
 ```
 
 <br />
+
+-->
+
 
 # Getting Started :dart:
 ### Fork and Clone the repo
@@ -319,6 +322,7 @@ export const headerData = {
 }
 ```
 
+<!--
 #### Data for each component is divided into respective files.
 >#### Set website theme in [`src/data/themeData.js`](https://github.com/hhhrrrttt222111/developer-portfolio/blob/master/src/data/themeData.js) and choose your favourite font from [`src/App.css`](https://github.com/hhhrrrttt222111/developer-portfolio/blob/master/src/App.css)
 
@@ -365,6 +369,8 @@ export const educationData = [
 > ### Follow these [instructions](https://github.com/hhhrrrttt222111/developer-portfolio/wiki/Contacts) to connect contacts form with Google Sheet
 
 <br />
+
+-->
 
 # Hosting :globe_with_meridians:
 ## Netlify
@@ -474,6 +480,8 @@ export const educationData = [
 
 <br />
 
+<!--
+
 # Upcoming Features :construction:
 - Light/Dark theme toggle
 - More illustrations to choose from
@@ -508,3 +516,4 @@ export const educationData = [
         </tr>
     </table>
 </div>
+-->
