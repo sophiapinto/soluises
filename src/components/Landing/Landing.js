@@ -14,6 +14,7 @@ import {
     FaGithub,
     FaYoutube,
     FaBlogger,
+    FaInstagram,
 } from 'react-icons/fa';
 
 function Landing() {
@@ -114,16 +115,16 @@ function Landing() {
                                 />
                             </a>
                         )}
-                        {socialsData.youtube && (
+                        {socialsData.instagram && (
                             <a
-                                href={socialsData.youtube}
+                                href={socialsData.instagram}
                                 target='_blank'
                                 rel='noreferrer'
                             >
-                                <FaYoutube
+                                <FaInstagram
                                     className='landing--social'
                                     style={{ color: theme.secondary }}
-                                    aria-label='YouTube'
+                                    aria-label='Instagram'
                                 />
                             </a>
                         )}
@@ -171,9 +172,11 @@ function Landing() {
                                     target='_blank'
                                     rel='noreferrer'
                                 >
+                                    {/*
                                     <Button className={classes.resumeBtn}>
                                         Currículo
                                     </Button>
+                                    */}
                                 </a>
                             )}
                             <NavLink
