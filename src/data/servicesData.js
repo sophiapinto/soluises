@@ -27,11 +27,11 @@ export const servicesData = [
          title: 'Pesquisa',
          icon: <FaRegNewspaper />
     },
-    // {
-    //     id: 5,
-    //     title: 'Tutoring',
-    //     icon: <FaChalkboardTeacher />
-    // },
+    {
+         id: 5,
+         title: 'Tutoria',
+         icon: <FaChalkboardTeacher />
+    },
 
     {
         id: 6,
@@ -63,10 +63,10 @@ export const servicesData = [
     //     title: 'Audio Transcription',
     //     icon: <AiFillAudio />
     // },
-    //{
-    //    id: 13,
-    //    title: 'Criação de Conteúdo',
-    //    icon: <FaRegNewspaper />
-   // },
+    {
+        id: 13,
+       title: 'Criação de Conteúdo',
+        icon: <FaRegNewspaper />
+    },
 
 ]

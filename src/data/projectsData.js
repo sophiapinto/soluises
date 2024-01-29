@@ -1,20 +1,22 @@
 import one from '../assets/svg/projects/one.svg'
 import two from '../assets/svg/projects/two.svg'
+import eight from '../assets/svg/projects/eight.svg'
+
+/*
 import three from '../assets/svg/projects/three.svg'
 import four from '../assets/svg/projects/four.svg'
 
 import five from '../assets/svg/projects/five.svg'
 import six from '../assets/svg/projects/six.svg'
 import seven from '../assets/svg/projects/seven.svg'
-import eight from '../assets/svg/projects/eight.svg'
-
+*/
 
 export const projectsData = [
     {
         id: 1,
         projectName: 'InovOnline',
-        projectDesc: 'Plataforma de ensino online do projeto Maratoninha Maker',
-        tags: ['React', 'CSS', 'NodeJS, Sequelize'],
+        projectDesc: 'Plataforma de ensino online do projeto Maratoninha Maker.',
+        tags: ['React', 'Styled Components', 'NodeJS', 'Sequelize'],
         code: '',
         demo: 'https://inovonline.vercel.app/',
         image: eight
@@ -23,7 +25,7 @@ export const projectsData = [
         id: 2,
         projectName: 'ACM Engenharia Civil',
         projectDesc: 'Portfólio online da empresa de Engenharia Civil: ACM.',
-        tags: ['HTML, CSS, SCSS'],
+        tags: ['Java Script', 'SCSS'],
         code: '',
         demo: 'https://acmengenhariacivil.vercel.app/',
         image: two
