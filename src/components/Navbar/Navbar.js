@@ -218,6 +218,7 @@ function Navbar() {
                                 spy='true'
                                 duration={2000}
                             >
+                                {/*
                                 <div className={classes.drawerItem}>
                                     <HiDocumentText
                                         className={classes.drawerIcon}
@@ -226,6 +227,7 @@ function Navbar() {
                                         Curriculo
                                     </span>
                                 </div>
+                                */}
                             </NavLink>
                         </Fade>
 
@@ -254,6 +256,7 @@ function Navbar() {
                                 spy='true'
                                 duration={2000}
                             >
+                               {/*
                                 <div className={classes.drawerItem}>
                                     <FaFolderOpen
                                         className={classes.drawerIcon}
@@ -262,6 +265,7 @@ function Navbar() {
                                         Blog
                                     </span>
                                 </div>
+                            */}
                             </NavLink>
                         </Fade>
 
