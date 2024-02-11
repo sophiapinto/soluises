@@ -12,7 +12,7 @@ import {
     FaTwitter,
     FaLinkedin,
     FaGithub,
-    FaYoutube,
+    FaRegFileAlt,
     FaBlogger,
     FaInstagram,
 } from 'react-icons/fa';
@@ -89,6 +89,20 @@ function Landing() {
                                 />
                             </a>
                         )}
+                        {socialsData.lattes && (
+                            <a
+                                href={socialsData.lattes}
+                                target='_blank'
+                                rel='noreferrer'
+                            >
+                                <FaRegFileAlt
+                                    className='landing--social'
+                                    style={{ color: theme.secondary }}
+                                    aria-label='Curriculo-Lattes'
+                                />
+                            </a>
+                        )}
+
                         {socialsData.github && (
                             <a
                                 href={socialsData.github}
@@ -102,6 +116,7 @@ function Landing() {
                                 />
                             </a>
                         )}
+
                         {socialsData.twitter && (
                             <a
                                 href={socialsData.twitter}

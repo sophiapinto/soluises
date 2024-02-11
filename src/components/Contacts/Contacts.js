@@ -15,6 +15,7 @@ import {
     FaCodepen,
     FaInstagram,
     FaGitlab,
+    FaRegFileAlt,
     FaMediumM,
 } from 'react-icons/fa';
 import { AiOutlineSend, AiOutlineCheckCircle } from 'react-icons/ai';
@@ -497,6 +498,18 @@ function Contacts() {
                                     <FaMediumM aria-label='Medium' />
                                 </a>
                             )}
+                            {socialsData.lattes && (
+                            <a
+                                href={socialsData.lattes}
+                                target='_blank'
+                                rel='noreferrer'
+                                className={classes.socialIcon}
+                                >
+                                <FaRegFileAlt aria-label='Curriculo-Lattes'
+                                />
+                            </a>
+                        )}
+
                             {socialsData.blogger && (
                                 <a
                                     href={socialsData.blogger}
