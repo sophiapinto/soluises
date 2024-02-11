@@ -183,15 +183,14 @@ function Landing() {
                             {headerData.resumePdf && (
                                 <a
                                     href={headerData.resumePdf}
-                                    download='resume'
+                                    download='ebook'
                                     target='_blank'
                                     rel='noreferrer'
                                 >
-                                    {/*
                                     <Button className={classes.resumeBtn}>
-                                        Currículo
+                                        E-book
                                     </Button>
-                                    */}
+                                    
                                 </a>
                             )}
                             <NavLink
