@@ -2,7 +2,8 @@ export const socialsData = {
     github: 'https://github.com/sophiapinto',
     linkedIn: 'https://www.linkedin.com/in/sarah-sophia-pinto-9031081a9/',
     instagram: 'https://www.instagram.com/yllion.com.br/',
-    lattes:'http://lattes.cnpq.br/0461821607737727'
+    lattes:'http://lattes.cnpq.br/0461821607737727',
+    medium: 'https://medium.com/@sarahsophiapinto'
     
     /*
     facebook: 'https://www.facebook.com/',
