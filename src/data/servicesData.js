@@ -29,7 +29,7 @@ export const servicesData = [
     },
     {
          id: 5,
-         title: 'Tutoria',
+         title: 'Modelagem e impressão 3D',
          icon: <FaChalkboardTeacher />
     },
 
@@ -45,17 +45,17 @@ export const servicesData = [
     // }, 
     {
         id: 9,
-        title: 'Edição de Vídeo',
+        title: 'Consultoria especializada',
         icon: <FaVideo />
     },
-    // {
-    //     id: 10,
-    //     title: 'Data Entry', 
-    //     icon: <BsClipboardData />
-    // },
+    {
+        id: 10,
+        title: 'Serviço de telemetria em Estação Terrestre', 
+        icon: <BsClipboardData />
+  },
     {
         id: 11,
-        title: 'Escrita Criativa',
+        title: 'Minicursos e palestras',
         icon: <FaTabletAlt />
     },
     // {

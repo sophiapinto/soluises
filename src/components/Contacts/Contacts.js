@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { Snackbar, IconButton, SnackbarContent } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
-import axios from 'axios';
-import isEmail from 'validator/lib/isEmail';
+//import axios from 'axios';
+//import isEmail from 'validator/lib/isEmail';
 import { makeStyles } from '@material-ui/core/styles';
 import {
     FaTwitter,
@@ -27,18 +27,20 @@ import { ThemeContext } from '../../contexts/ThemeContext';
 import { socialsData } from '../../data/socialsData';
 import { contactsData } from '../../data/contactsData';
 import './Contacts.css';
-import { NoEncryption } from '@material-ui/icons';
+//import { NoEncryption } from '@material-ui/icons';
 
 function Contacts() {
     const [open, setOpen] = useState(false);
 
+    /*
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    */
 
     const [success, setSuccess] = useState(false);
     const [errMsg, setErrMsg] = useState('');
-
+    
     const { theme } = useContext(ThemeContext);
 
     const handleClose = (event, reason) => {
