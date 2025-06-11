@@ -7,9 +7,9 @@ function Main() {
             <Landing />
             <About />
             <Testimonials />
-            <Blog />
-            <Education />
-            <Projects />,
+            <Education /> {/*IMPACTO*/}
+            <Projects /> {/*AÇÕES*/}
+            <Blog /> {/*REPORTS*/}
             <Contacts />
             <Footer />
         </div>
