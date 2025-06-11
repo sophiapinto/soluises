@@ -43,16 +43,16 @@ function Testimonials() {
             {testimonialsData.length > 0 && (
                 <div
                     className='testimonials'
-                    style={{ backgroundColor: theme.primary }}
+                    style={{ backgroundColor: '#1E2230' }}
                 >
                     <div className='testimonials--body'>
                         <FaQuoteLeft
                             className='quote'
-                            style={{ color: theme.secondary }}
+                            style={{ color: '#3EA681' }}
                         />
                         <div
                             className='testimonials--slider'
-                            style={{ backgroundColor: theme.primary }}
+                            style={{ backgroundColor: '#1E2230' }}
                         >
                             <Slider {...settings} ref={sliderRef}>
                                 {testimonialsData.map((test) => (
@@ -65,7 +65,7 @@ function Testimonials() {
                                                 className='review--img'
                                                 style={{
                                                     backgroundColor:
-                                                        theme.secondary,
+                                                        '#3EA681',
                                                 }}
                                             >
                                                 <img
@@ -77,7 +77,7 @@ function Testimonials() {
                                                 className='review--content'
                                                 style={{
                                                     backgroundColor:
-                                                        theme.secondary,
+                                                        '#3EA681',
                                                     color: theme.tertiary,
                                                 }}
                                             >
@@ -92,20 +92,20 @@ function Testimonials() {
                             <button
                                 className='prevBtn'
                                 onClick={gotoPrev}
-                                style={{ backgroundColor: theme.secondary }}
+                                style={{ backgroundColor: '#ffffff' }}
                             >
                                 <FaArrowLeft
-                                    style={{ color: theme.primary }}
+                                    style={{ color: '#1E2230' }}
                                     aria-label='Previous testimonial'
                                 />
                             </button>
                             <button
                                 className='nextBtn'
                                 onClick={gotoNext}
-                                style={{ backgroundColor: theme.secondary }}
+                                style={{ backgroundColor: '#ffffff' }}
                             >
                                 <FaArrowRight
-                                    style={{ color: theme.primary }}
+                                    style={{ color: '#1E2230' }}
                                     aria-label='Next testimonial'
                                 />
                             </button>

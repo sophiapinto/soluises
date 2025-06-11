@@ -11,7 +11,7 @@ function Education() {
 
     const { theme } = useContext(ThemeContext);
     return (
-        <div className="education" id="resume" style={{backgroundColor: theme.secondary}}>
+        <div className="education" id="resume" style={{backgroundColor: '#1E2230'}}>
            
             <div className="education-body">
                 <div className="education-description">
@@ -20,15 +20,13 @@ function Education() {
                         <EducationCard 
                             key={edu.id}
                             id={edu.id}
-                            institution={edu.institution}
                             course={edu.course}
-                            startYear={edu.startYear}
-                            endYear={edu.endYear}
+                            metrica={edu.metrica}
                         />
                     ))}
                 </div>
                 <div className="education-image">
-                    <img src={theme.eduimg} alt=""/>
+                    <img src={theme.imageImpacto} alt=""/>
                 </div>
             </div>
         </div>
