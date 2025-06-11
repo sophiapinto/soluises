@@ -11,7 +11,8 @@ function Landing() {
 
     const useStyles = makeStyles((t) => ({
         resumeBtn: {
-            color: '#D63826',
+            color: '#ffffff',
+            backgroundColor: '#D63826',
             borderRadius: '30px',
             textTransform: 'inherit',
             textDecoration: 'none',
@@ -40,7 +41,7 @@ function Landing() {
             <div className='landing--container'>
                 <div
                     className='landing--container-left'
-                    style={{ backgroundColor: theme.primary }}
+                    style={{ backgroundColor: '#ffffff' }}
                 >
                 </div>
                 <img
