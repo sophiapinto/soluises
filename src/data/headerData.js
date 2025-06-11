@@ -1,10 +1,8 @@
-import ebook from '../assets/pdf/ebook.pdf'
-import perfil from '../assets/png/perfil.jpeg'
+import perfil from '../assets/png/logo.png'
 
 export const headerData = {
-    name: 'Sarah Sophia Pinto',
-    title: "Engenharia Aeroespacial",
-    desciption:"Pós graduada em Engenharia de controle e automação, focando na aplicação de metodologias ágeis na resolução de problemas e inovação de processos.",
+    name: 'Soluises',
+    title: " ",
+    desciption:"Fundada em 2016, somos a maior comunidade de inovação  do Maranhão  que conecta pessoas de todo o estado  para impulsionar a criação de negócios inovadores.",
     image: perfil,
-    resumePdf: ebook
 }
