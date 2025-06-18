@@ -47,8 +47,8 @@
 }
 
 .about-description >h2 {
-    margin-bottom: 40px;
-    font-size: 3.5rem;
+    margin-bottom: 60px;
+    font-size: 2.5rem;
     font-family: var(--primaryFont);
 }
 
@@ -58,29 +58,15 @@
     font-family: var(--primaryFont);
 }
 
-.about-img {
-    margin-top: 40px;
-    pointer-events: none;
-}
-
-.about-img > img {
-    width: 380px;
-    flex: 0.5;
-}
-
 @media (min-width: 992px) and (max-width: 1380px) {
 
     .about-description > h2 {
-      font-size: 3.3rem;
+      font-size: 2.3rem;
       margin-bottom: 30px;
     }
     .about-description > p {
       font-size: 1.15rem;
     }
-
-    .about-img>img {
-        width: 300px;
-    } 
 }
 
 @media screen and (max-width: 992px){
@@ -113,12 +99,6 @@
     .about-description > p {
         font-size: 1.1rem;
     }
-
-    .about-img > img {
-        width: 250px;
-        flex: 0.4;
-    }
-
 }
 
 @media screen and (max-width: 800px){
@@ -152,9 +132,5 @@
 
     .about-description > p{
       font-size: 0.95rem;
-    }
-
-    .about-img > img {
-        width: 200px;
     }
 }

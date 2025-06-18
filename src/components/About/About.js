@@ -18,20 +18,10 @@ function About() {
             </div>
             <div className="about-body">
                 <div className="about-description">
-                    <h2 style={{color: '#FFFFFF'}}>{aboutData.title}</h2>
-                    <p style={{color:'#FFFFFF'}}>{aboutData.description1}<br/><br/>{aboutData.description2}</p>
+                    <h2 style={{color: '#FFFFFF', fontSize:'28px'}}>{aboutData.title}</h2>
+                    <p style={{color:'#FFFFFF', fontSize:'14px'}}>{aboutData.description1}<br/><br/>{aboutData.description2}</p>
                 </div>
-{/*
-                <div className="about-img">
-                    <img 
-                        src={aboutData.image === 1 ? theme.aboutimg1 : theme.aboutimg2}  
-                        alt="" 
-                    />
-                </div>
-
-
-*/}
-    </div>
+            </div>
         </div>
 
     )
