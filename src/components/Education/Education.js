@@ -15,18 +15,18 @@ function Education() {
            
             <div className="education-body">
                 <div className="education-description">
-                <h1 style={{color:theme.primary}}>Impacto</h1>
+                <h1 style={{color: '#ffffff'}}>Impacto</h1>
                     {educationData.map(edu => (
                         <EducationCard 
                             key={edu.id}
                             id={edu.id}
                             course={edu.course}
-                            metrica={edu.metrica}
+                            institution={edu.institution}
                         />
                     ))}
                 </div>
                 <div className="education-image">
-                    <img src={theme.imageImpacto} alt=""/>
+                    <img src={theme.impactoPrincipal} alt="impacto-image"/>
                 </div>
             </div>
         </div>

@@ -1,7 +1,5 @@
 /* eslint-disable */
-import { 
-    blueThemegirl, blueThemeboy, imageImpacto, eduBlue, expBlue, contactsBlue,
-} from './images'
+import { impactoPrincipal } from './images'
 
 export const blueThemeDark = {
     type: 'dark',
@@ -18,9 +16,5 @@ export const blueThemeDark = {
     tertiary80: '#eaeaeacc',
     tertiary70: '#eaeaeab3',
     tertiary50: '#eaeaea80',
-    aboutimg1: blueThemeboy,
-    aboutimg2: blueThemegirl,
-    imageImpacto: eduBlue,
-    expimg: expBlue,
-    contactsimg: contactsBlue
+    impactoPrincipal: impactoPrincipal,
 }

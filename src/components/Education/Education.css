@@ -42,9 +42,9 @@
 }
 
 .educard-img {
-    border-radius: 50%;
-    width: 55px;
-    height: 55px;
+    border-radius: 40px;
+    width: 70px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,43 +59,39 @@
     margin-left: 0.6rem;
 }
 
-.education-details > h6 {
-    font-family: var(--primaryFont);
-    font-size: 0.85rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
+/*
+    institution: '+370' h4 vermelho #D63826
+    course: 'membros ativos' h5 preto #1E2230
+*/
 
 .education-details > h4 {
     font-family: var(--primaryFont);
-    font-size: 1.225rem;
+    font-size: 3rem;
     font-weight: 600;
+    color: #D63826;
 }
 
 .education-details > h5 {
     font-family: var(--primaryFont);
-    font-size: 1.15rem;
+    font-size: 1.5rem;
     font-weight: 600;
+    color: #1E2230;
 }
 
 .education-image {
-    box-sizing: border-box;
+    border-radius: 50px;
     padding: 1rem;
     flex: 0.35;
     margin-top: 1rem;
     pointer-events: none;
+    border-radius: 20px;
+    
 }
 
 .education-image > img {
     width: 100%;
+    height: 60%;
 }
-
-
-
-@media (min-width: 992px) and (max-width: 1380px) {
-
-}
-
 
 @media screen and (max-width: 992px) {
     .education {
@@ -163,16 +159,3 @@
     }
 }
 
-@media screen and (max-width: 400px) {
-
-}
-  
-@media only screen and (min-device-width: 320px) and (max-device-width: 
-  480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
-
-}
-
-
-@media only screen and (device-width: 768px) {
-
-}

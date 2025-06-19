@@ -6,7 +6,7 @@ import { ThemeContext } from '../../contexts/ThemeContext';
 
 import './Education.css'
 
-function EducationCard({ id, institution, course, startYear, endYear }) {
+function EducationCard({ id, institution, course }) {
 
     const { theme } = useContext(ThemeContext);
 
@@ -25,7 +25,8 @@ function EducationCard({ id, institution, course, startYear, endYear }) {
         <Fade bottom>
             <div key={id} className={`education-card ${classes.educationCard}`} >
                 <div className="education-details">
-                    <h4 style={{color: '#1E2230'}}>{course}</h4>
+                    <h4>{institution}</h4>
+                    <h5>{course}</h5>
                 </div>
             </div>
         </Fade>        
