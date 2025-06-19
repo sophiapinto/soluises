@@ -1,6 +1,6 @@
 .about {
-    min-height: 100vh;
     position: relative;
+    align-items: center;
 }
 
 .about .line-styling{
@@ -29,26 +29,29 @@
 
 .about-body {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    position: relative;
+    margin-left: 10%;
+    margin-right: 10%;
     padding-top: 8rem;
-    height: fit-content;
+    width: 150%;
+    height: 100%;
 }
 
 .about-description {
-    display: flex;
+  position: relative;
+      display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
+    align-items: center;
     flex: 0.5;
     width: 100%;
-    height: fit-content;
 }
 
-.about-description >h2 {
+.about-description > h2 {
+  position: relative;
     margin-bottom: 60px;
     font-size: 2.5rem;
+    align-items: center;
     font-family: var(--primaryFont);
 }
 

@@ -1,14 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import './About.css';
-import { ThemeContext } from '../../contexts/ThemeContext';
+
 import { aboutData } from '../../data/aboutData'
 
 
 
 function About() {
 
-    const { theme } = useContext(ThemeContext);
     return (
         <div className="about" id="about" style={{backgroundColor: '#1E2230'}}>
             <div className="line-styling">
@@ -18,7 +17,7 @@ function About() {
             </div>
             <div className="about-body">
                 <div className="about-description">
-                    <h2 style={{color: '#FFFFFF', fontSize:'28px'}}>{aboutData.title}</h2>
+                    <h2 style={{color: '#FFFFFF', fontSize:'28px', position:'relative', alignItems:'center'}}>{aboutData.title}</h2>
                     <p style={{color:'#FFFFFF', fontSize:'14px'}}>{aboutData.description1}<br/><br/>{aboutData.description2}</p>
                 </div>
             </div>
