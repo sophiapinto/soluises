@@ -45,7 +45,7 @@ function Blog() {
             {blogData.length > 0 && (
                 <div className="blog" id="blog" style={{backgroundColor: theme.secondary}}>
                     <div className="blog--header">
-                        <h1 style={{color: theme.primary}}>Reports</h1>
+                        <h1 style={{color: "#ffffff"}}>Nossas ações</h1>
                     </div>
                     <div className="blog--body">
                         <div className="blog--bodyContainer">
@@ -55,7 +55,6 @@ function Blog() {
                                     title={blog.title}
                                     desc={blog.description}
                                     date={blog.date}
-                                    url={blog.url}
                                     key={blog.id}
                                     id={blog.id}
                                 />

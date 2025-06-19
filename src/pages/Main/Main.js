@@ -8,8 +8,8 @@ function Main() {
             <About />
             <Testimonials />
             <Education /> {/*IMPACTO*/}
-            <Projects /> {/*AÇÕES*/}
-            <Blog /> {/*REPORTS*/}
+            <Blog /> {/*AÇÕES*/}
+            <Projects /> {/*REPORTS*/}
             <Contacts />
             <Footer />
         </div>
