@@ -43,7 +43,7 @@ function ProjectPage() {
             },
         },
         home: {
-            color: theme.secondary,
+            color: '#ffffff',
             position: 'absolute',
             top: 25,
             left: 25,
@@ -52,7 +52,7 @@ function ProjectPage() {
             boxSizing: 'content-box',
             fontSize: '2rem',
             cursor: 'pointer',
-            boxShadow: theme.type === 'dark' ? '3px 3px 6px #ffffff40, -3px -3px 6px #00000050' : '3px 3px 6px #ffffff40, -3px -3px 6px #00000050',
+            boxShadow: theme.type === 'dark' ? '3px 3px 6px #fffffff, -3px -3px 6px #00000050' : '3px 3px 6px #fffffff, -3px -3px 6px #ff',
             transition: 'all 0.3s ease-in-out',
             "&:hover": 
             {
@@ -76,7 +76,7 @@ function ProjectPage() {
                 <Link to="/">
                         <AiOutlineHome className={classes.home}/>
                 </Link>
-                <h1 style={{color: theme.secondary}}>Projetos</h1>
+                <h1 style={{color: '#ffffff'}}>Projetos</h1>
             </div>
            <div className="projectPage-container">
                <div className="projectPage-search">

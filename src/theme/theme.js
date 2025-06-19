@@ -1,20 +1,10 @@
 /* eslint-disable */
+import { dark } from '@material-ui/core/styles/createPalette'
 import { impactoPrincipal } from './images'
 
 export const blueThemeDark = {
-    type: 'dark',
-    primary: '#545fc4',
-    primary400: '#6e76c7',
-    primary600: '#3644c9',
-    primary80: '#545fc4cc',
-    primary50: '#545fc480',
-    primary30: '#545fc44d',
-    secondary: '#212121',
-    secondary70: '#212121b3',
-    secondary50: '#21212180',
-    tertiary: '#eaeaea',
-    tertiary80: '#eaeaeacc',
-    tertiary70: '#eaeaeab3',
-    tertiary50: '#eaeaea80',
+    theme: dark,
+    secondary: '#1e2230',
+    tertiary: '#ffffff',
     impactoPrincipal: impactoPrincipal,
 }
