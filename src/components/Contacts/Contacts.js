@@ -1,11 +1,8 @@
 import React, { useContext, useState } from 'react';
-import { Snackbar, IconButton, SnackbarContent } from '@material-ui/core';
-import CloseIcon from '@material-ui/icons/Close';
 //import axios from 'axios';
 //import isEmail from 'validator/lib/isEmail';
 import { makeStyles } from '@material-ui/core/styles';
 import { FaInstagram } from 'react-icons/fa';
-import { AiOutlineSend, AiOutlineCheckCircle } from 'react-icons/ai';
 import { FiAtSign } from 'react-icons/fi';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 
@@ -88,8 +85,8 @@ function Contacts() {
             },
         },
         detailsIcon: {
-            backgroundColor: theme.primary,
-            color: theme.secondary,
+            backgroundColor: '#D63826',
+            color: '#FFFFFF',
             borderRadius: '50%',
             width: '45px',
             height: '45px',
@@ -267,7 +264,7 @@ function Contacts() {
             style={{ backgroundColor: theme.secondary }}
         >
             <div className='contacts--container'>
-                <h1 style={{ color: theme.primary }}>Contatos</h1>
+                <h1 style={{ color: '#FFFFFF'}}>Contatos</h1>
                 <div className='contacts-body'>
                     
                     <div className='contacts-details'>
@@ -304,11 +301,6 @@ function Contacts() {
                     </div>
                 </div>
             </div>
-            <img
-                src={theme.contactsimg}
-                alt='contacts'
-                className='contacts--img'
-            />
         </div>
     );
 }
