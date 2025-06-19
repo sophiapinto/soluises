@@ -15,13 +15,27 @@
     justify-content: center;
     width: 100%;
     margin: 1rem;
+    flex-direction: column;
+    align-items: center;
+    flex: 0.5;
+    width: 100%;
 }
 
 
-.projects--header h1 {
+.projects--header > h1 {
     margin-bottom: 40px;
     font-size: 3.5rem;
     font-family: var(--primaryFont);
+
+}
+
+.projects--header > p {
+    font-size: 1rem;
+    color: #e0d9d9;
+    font-family: var(--primaryFont);
+    text-align: center;
+    width: 80%;
+    margin-bottom: 2rem;
 }
 
 .projects--body {
