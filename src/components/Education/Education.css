@@ -1,5 +1,8 @@
 .education {
     min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 .education-body {
@@ -9,10 +12,12 @@
     justify-content: center;
     width: 100%;
     color: hsla(117, 56%, 49%, 0.702);
+    flex-wrap: wrap;
 }
 
 .education-description {
     width: 100%;
+    max-width: 100%;
     flex: 0.65;
     padding: 2rem;
     display: flex;
@@ -20,12 +25,14 @@
     align-items: flex-start;
     justify-content: center;
     margin-left: 7%;
+    box-sizing: border-box;
 }
 
 .education-description > h1 {
     font-size: 3.5rem;
     font-family: var(--primaryFont);
     margin-bottom: 2rem;
+    max-width: 100%;
 }
 
 .education-card {
@@ -34,11 +41,14 @@
     align-items: flex-start;
     justify-content: flex-start;
     width: 90%;
-    height: 140px;
+    max-width: 100%;
+    height: auto;
     padding: 1.5rem;
     border-radius: 20px;
     margin-bottom: 1.5rem;
+    box-sizing: border-box;
     transition: background-color 200ms ease-in-out;
+    overflow: hidden;
 }
 
 .educard-img {
@@ -53,6 +63,7 @@
 
 .educard-img > img {
     width: 40px;
+    max-width: 100%;
 }
 
 .education-details {
@@ -69,6 +80,7 @@
     letter-spacing: -0.5px;
     margin-bottom: 0.4rem;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+    word-break: break-word;
 }
 
 .education-details > h5 {
@@ -77,45 +89,44 @@
     font-weight: 600;
     color: #1E2230;
     margin: 0;
+    word-break: break-word;
 }
 
+/* IMAGEM */
 .education-image {
-    border-radius: 50px;
-    padding: 1rem;
-    flex: 0.35;
-    margin-top: 1rem;
-    pointer-events: none;
     border-radius: 20px;
+    padding: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 400px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .education-image > img {
     width: 100%;
-    height: 60%;
+    height: auto;
+    max-width: 300px;
+    object-fit: contain;
 }
 
 /* RESPONSIVO */
 @media screen and (max-width: 992px) {
-    .education {
-        min-height: 100%;
-    }
-
-    .education-image {
-        display: none;
-    }
-
     .education-description {
         flex: 1;
         margin: auto;
+        padding: 2rem 1.5rem;
     }
 
     .education-description > h1 {
         font-size: 3.2rem;
+        text-align: center;
     }
 
     .education-card {
         width: 100%;
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
     }
 
     .education-details > h4 {
@@ -125,46 +136,32 @@
     .education-details > h5 {
         font-size: 1.1rem;
     }
-}
 
-@media screen and (max-width: 800px) {
-    .education-description > h1 {
-        font-size: 3rem;
+    .education-image {
+        display: flex;
+        justify-content: center;
         margin-bottom: 2rem;
-        align-self: center;
-    }
-
-    .education-description {
-        padding: 1rem;
-    }
-
-    .education-card {
-        padding: 1rem;
-        margin-bottom: 1.5rem;
-        height: 130px;
-    }
-
-    .educard-img {
-        border-radius: 50%;
-        width: 45px;
-        height: 45px;
-    }
-
-    .educard-img > img {
-        width: 30px;
-    }
-
-    .education-details > h4 {
-        font-size: 1.7rem;
-    }
-
-    .education-details > h5 {
-        font-size: 1rem;
     }
 }
 
 @media screen and (max-width: 600px) {
     .education-description > h1 {
         font-size: 2.5rem;
+    }
+
+    .education-details > h4 {
+        font-size: 1.8rem;
+    }
+
+    .education-details > h5 {
+        font-size: 1rem;
+    }
+
+    .education-card {
+        padding: 1rem;
+    }
+
+    .education-image > img {
+        max-width: 250px;
     }
 }
