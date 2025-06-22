@@ -1,7 +1,7 @@
 .about {
     position: relative;
     min-height: 100vh;
-    max-width: 100vh;
+    min-width: 100vh;
 }
 
 .about .line-styling{
