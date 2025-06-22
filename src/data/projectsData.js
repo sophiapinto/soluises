@@ -1,4 +1,4 @@
-import one from '../assets/png/logo.png';
+import one from '../assets/report/report-07.jpeg';
 import two from 'src/assets/report/report-08.jpeg';
 import three from 'src/assets/report/report-09.jpeg';
 import four from 'src/assets/report/report-10.jpeg';
