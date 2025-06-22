@@ -31,13 +31,14 @@
   },
   "eslintConfig": {
     "extends": [
-    'eslint:recommended',
-    'airbnb-typescript',
-    'plugin:@typescript-eslint/recommended',
-    'prettier/react',
-    'prettier/@typescript-eslint',
-    'plugin:prettier/recommended'
-    ]
+    "react-app",
+    "react-app/jest",
+    "airbnb-typescript",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/react",
+    "prettier/@typescript-eslint"',
+    "plugin:prettier/recommended"
+    ],
   },
   "browserslist": {
     "production": [
