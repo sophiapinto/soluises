@@ -1,4 +1,4 @@
-/* Geral */
+/* === GERAL === */
 body {
   overflow-x: hidden;
 }
@@ -6,20 +6,23 @@ body {
 .about {
   overflow-x: hidden;
   padding: 0 10px;
-  background-color: #1E2230;
+  position: relative;
+  background-color: #1E2230; /* cor de fundo padrão, ajuste se necessário */
 }
 
-/* Linha e círculos verdes fixos */
+/* === LINHA VERDE COM BOLINHAS === */
 .about .line-styling {
-  position: relative;
-  top: 0;
-  margin: 2rem auto 1.5rem auto;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 50px;
+  width: 85%;
+  max-width: 600px;
+
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: fit-content;
-  max-width: 90%;
+  justify-content: space-between;
 }
 
 .about .line-styling .style-circle {
@@ -30,24 +33,24 @@ body {
 }
 
 .about .line-styling .style-line {
-  width: 60px;
-  height: 3px;
+  width: 95%;
+  height: 5px;
   border-radius: 10px;
   background-color: #3EA681;
 }
 
-/* Corpo da seção */
+/* === CONTEÚDO DA SEÇÃO === */
 .about-body {
   width: 100%;
   margin: 0 auto;
-  padding: 5rem 10%;
+  padding: 8rem 10%;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   flex-direction: column;
+  position: relative;
 }
 
-/* Texto */
 .about-description {
   width: 100%;
   max-width: 100%;
@@ -57,7 +60,7 @@ body {
 }
 
 .about-description > h2 {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
   font-size: 2.5rem;
   font-family: var(--primaryFont);
   color: #ffffff;
@@ -69,7 +72,7 @@ body {
   font-family: var(--primaryFont);
 }
 
-/* Responsividade: apenas texto ajustável */
+/* === RESPONSIVIDADE === */
 @media (min-width: 992px) and (max-width: 1380px) {
   .about-description > h2 {
     font-size: 2.3rem;
@@ -81,33 +84,72 @@ body {
 }
 
 @media screen and (max-width: 992px) {
+  .about .line-styling {
+    top: 20px;
+    width: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   .about-body {
-    padding-top: 2rem;
+    padding-top: 4rem;
     flex-direction: column-reverse;
     align-items: center;
     justify-content: space-evenly;
   }
 
   .about-description {
+    flex: 0.6;
     padding: 20px;
   }
 
   .about-description > h2 {
-    font-size: 2.2rem;
+    font-size: 3rem;
     margin-bottom: 20px;
   }
 
   .about-description > p {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .about .line-styling .style-circle {
+    width: 10px;
+    height: 10px;
+  }
+
+  .about-description > h2 {
+    align-self: center;
   }
 }
 
 @media screen and (max-width: 600px) {
+  .about .line-styling .style-circle {
+    width: 10px;
+    height: 10px;
+  }
+
+  .about .line-styling .style-line {
+    width: 93%;
+    height: 5px;
+  }
+
   .about-description > h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .about-description > p {
     font-size: 0.95rem;
+  }
+}
+
+/* Removido: alteração do alinhamento da linha no mobile */
+@media screen and (max-width: 768px) {
+  /* Deixa a linha centralizada usando transform */
+  .about .line-styling {
+    width: 85%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
