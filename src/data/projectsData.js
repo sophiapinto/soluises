@@ -11,7 +11,7 @@ export const projectsData = [
         id: 1,
         projectName: '',
         projectDesc: '',
-        tags: [''],
+        tags: [],
         code: '',
         demo: 'https://inovonline.vercel.app/',
         image: one
@@ -20,7 +20,7 @@ export const projectsData = [
         id: 2,
         projectName: '',
         projectDesc: '',
-        tags: ['],
+        tags: [],
         code: '',
         demo: 'https://acmengenhariacivil.vercel.app/',
         image: two
@@ -29,8 +29,8 @@ export const projectsData = [
         id: 3,
         projectName: '',
         projectDesc: '',
-        tags: [''],
-        code: ',
+        tags: [],
+        code: '',
         demo: 'https://vacbook.vercel.app/',
         image: three
     },
@@ -38,7 +38,7 @@ export const projectsData = [
         id: 4,
         projectName: '',
         projectDesc: '',
-        tags: [''],
+        tags: [],
         code: '',
         demo: 'https://sarahsophiapinto-d04de.chat.blip.ai/?appKey=cG91cGFjaGF0Ojg1MjRiMDVmLTI3MzMtNDJmMS1hZDI0LWIyMzNjZGY2NjU5Zg==',
         image: four
@@ -47,7 +47,7 @@ export const projectsData = [
         id: 5,
         projectName: '',
         projectDesc: '',
-        tags: [''],
+        tags: [],
         code: '',
         demo: 'https://sarahsophiapinto-d04de.chat.blip.ai/?appKey=cG91cGFjaGF0Ojg1MjRiMDVmLTI3MzMtNDJmMS1hZDI0LWIyMzNjZGY2NjU5Zg==',
         image: five
@@ -56,7 +56,7 @@ export const projectsData = [
         id: 6,
         projectName: '',
         projectDesc: '',
-        tags: [''],
+        tags: [],
         code: '',
         demo: 'https://sarahsophiapinto-d04de.chat.blip.ai/?appKey=cG91cGFjaGF0Ojg1MjRiMDVmLTI3MzMtNDJmMS1hZDI0LWIyMzNjZGY2NjU5Zg==',
         image: six
