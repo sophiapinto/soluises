@@ -1,6 +1,6 @@
-import one from '../assets/img-meetup.jpg';
-import two from '../assets/img-officehour.HEIF';
-import three from '../assets/img-premiosoluises.JPEG';
+import one from '../assets/acoes/img-meetup.jpg';
+import two from '../assets/acoes/img-officehour.jpg';
+import three from '../assets/acoes/img-premiosoluises.jpg';
 
 export const blogData = [
     {
