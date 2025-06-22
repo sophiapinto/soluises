@@ -1,40 +1,18 @@
-import React, { useContext, useState } from 'react';
-//import axios from 'axios';
-//import isEmail from 'validator/lib/isEmail';
+import React, { useContext, useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { FaInstagram } from 'react-icons/fa';
 import { FiAtSign } from 'react-icons/fi';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 
 import { ThemeContext } from '../../contexts/ThemeContext';
-
 import { contactsData } from '../../data/contactsData';
 import './Contacts.css';
-//import { NoEncryption } from '@material-ui/icons';
 
 function Contacts() {
-    const [open, setOpen] = useState(false);
-
-    /*
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
-    */
-
     const [success, setSuccess] = useState(false);
-    const [errMsg, setErrMsg] = useState('');
-    
     const { theme } = useContext(ThemeContext);
 
-    const handleClose = (event, reason) => {
-        if (reason === 'clickaway') {
-            return;
-        }
-
-        setOpen(false);
-    };
-
-    const useStyles = makeStyles((t) => ({
+    const useStyles = makeStyles(() => ({
         input: {
             border: `4px solid ${theme.primary80}`,
             backgroundColor: `${theme.secondary}`,
@@ -67,23 +45,6 @@ function Contacts() {
             transform: 'translate(25px,50%)',
             display: 'inline-flex',
         },
-        socialIcon: {
-            width: '45px',
-            height: '45px',
-            borderRadius: '50%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '21px',
-            backgroundColor: theme.primary,
-            color: theme.secondary,
-            transition: '250ms ease-in-out',
-            '&:hover': {
-                transform: 'scale(1.1)',
-                color: theme.secondary,
-                backgroundColor: theme.tertiary,
-            },
-        },
         detailsIcon: {
             backgroundColor: '#D63826',
             color: '#FFFFFF',
@@ -98,7 +59,6 @@ function Contacts() {
             flexShrink: 0,
             '&:hover': {
                 transform: 'scale(1.1)',
-                color: theme.secondary,
                 backgroundColor: theme.tertiary,
             },
         },
@@ -108,7 +68,6 @@ function Contacts() {
             transition: '250ms ease-in-out',
             '&:hover': {
                 transform: 'scale(1.08)',
-                color: theme.secondary,
                 backgroundColor: theme.tertiary,
             },
         },
@@ -116,279 +75,173 @@ function Contacts() {
 
     const classes = useStyles();
 
-    /*
-    
-        const handleContactForm = (e) => {
-            e.preventDefault();
-    
-            if (name && email && message) {
-                if (isEmail(email)) {
-                    const responseData = {
-                        name: name,
-                        email: email,
-                        message: message,
-                    };
-    
-                    axios.post(contactsData.sheetAPI, responseData).then((res) => {
-                        console.log('success');
-                        setSuccess(true);
-                        setErrMsg('');
-    
-                        setName('');
-                        setEmail('');
-                        setMessage('');
-                        setOpen(false);
-                    });
-                } else {
-                    setErrMsg('E-mail inválido!');
-                    setOpen(true);
-                }
-            } else {
-                setErrMsg('Insira todos os campos!');
-                setOpen(true);
-            }
-        };
-        
-    */
+    // ========= FUNÇÕES DE ENVIO =========
 
-  
-        // get all data in form and return object
+    function getFormData(form) {
+        const elements = form.elements;
+        let honeypot;
 
-        function getFormData(form) {
-          var elements = form.elements;
-          var honeypot;
-      
-          var fields = Object.keys(elements).filter(function(k) {
+        const fields = Object.keys(elements).filter((k) => {
             if (elements[k].name === "honeypot") {
-              honeypot = elements[k].value;
-              return false;
+                honeypot = elements[k].value;
+                return false;
             }
             return true;
-          }).map(function(k) {
-            if(elements[k].name !== undefined) {
-              return elements[k].name;
-            // special case for Edge's html collection
-            }else if(elements[k].length > 0){
-              return elements[k].item(0).name;
-            }
-          }).filter(function(item, pos, self) {
-            return self.indexOf(item) == pos && item;
-          });
-      
-          var formData = {};
-          fields.forEach(function(name){
-            var element = elements[name];
-            
-            // singular form elements just have one value
+        }).map((k) => {
+            if (elements[k].name !== undefined) return elements[k].name;
+            else if (elements[k].length > 0) return elements[k].item(0).name;
+        }).filter((item, pos, self) => self.indexOf(item) === pos && item);
+
+        const formData = {};
+        fields.forEach((name) => {
+            const element = elements[name];
             formData[name] = element.value;
-      
-            // when our element has multiple items, get their values
+
             if (element.length) {
-              var data = [];
-              for (var i = 0; i < element.length; i++) {
-                var item = element.item(i);
-                if (item.checked || item.selected) {
-                  data.push(item.value);
+                const data = [];
+                for (let i = 0; i < element.length; i++) {
+                    const item = element.item(i);
+                    if (item.checked || item.selected) data.push(item.value);
                 }
-              }
-              formData[name] = data.join(', ');
+                formData[name] = data.join(', ');
             }
-          });
-      
-          // add form-specific values into the data
-          formData.formDataNameOrder = JSON.stringify(fields);
-          formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
-          formData.formGoogleSendEmail
-            = form.dataset.email || ""; // no email by default
-      
-          return {data: formData, honeypot: honeypot};
-        }
-      
-        function handleFormSubmit(event) {  // handles form submit without any jquery
-          event.preventDefault();           // we are submitting via xhr below
-          var form = event.target;
-          var formData = getFormData(form);
-          var data = formData.data;
-      
-          // If a honeypot field is filled, assume it was done so by a spam bot.
-          if (formData.honeypot) {
-            return false;
-          }
-      
-          disableAllButtons(form);
-          var url = form.action;
-          var xhr = new XMLHttpRequest();
-          xhr.open('POST', url);
-          // xhr.withCredentials = true;
-          xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-          xhr.onreadystatechange = function() {
-              if (xhr.readyState === 4 && xhr.status === 200) {
+        });
+
+        formData.formDataNameOrder = JSON.stringify(fields);
+        formData.formGoogleSheetName = form.dataset.sheet || "responses";
+        formData.formGoogleSendEmail = form.dataset.email || "";
+
+        return { data: formData, honeypot };
+    }
+
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = getFormData(form);
+        const data = formData.data;
+
+        if (formData.honeypot) return false;
+
+        disableAllButtons(form);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', form.action);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
                 form.reset();
-                var formElements = form.querySelector(".form-elements")
-                if (formElements) {
-                  formElements.style.display = "none"; // hide form
-                }
-                var thankYouMessage = form.querySelector(".thankyou_message");
-                if (thankYouMessage) {
-                  thankYouMessage.style.display = "block";
-                }
-              }
-          };
-          // url encode form data for sending as post data
-          var encoded = Object.keys(data).map(function(k) {
-              return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
-          }).join('&');
-          xhr.send(encoded);
-        }
-        
-        function loaded() {
-          // bind to the submit event of our form
-          var forms = document.querySelectorAll("form.contact__form");
-          for (var i = 0; i < forms.length; i++) {
-            forms[i].addEventListener("submit", handleFormSubmit, false);
-          }
+                const thankYouMessage = form.querySelector(".thankyou_message");
+                if (thankYouMessage) thankYouMessage.style.display = "block";
+                setSuccess(true);
+            }
         };
-        document.addEventListener("DOMContentLoaded", loaded, false);
-      
-        function disableAllButtons(form) {
-          var buttons = form.querySelectorAll("button");
-          for (var i = 0; i < buttons.length; i++) {
-            buttons[i].disabled = true;
-          }
-        }
+        const encoded = Object.keys(data)
+            .map((k) => encodeURIComponent(k) + "=" + encodeURIComponent(data[k]))
+            .join('&');
+        xhr.send(encoded);
+    }
+
+    function disableAllButtons(form) {
+        const buttons = form.querySelectorAll("button");
+        buttons.forEach((btn) => btn.disabled = true);
+    }
+
+    useEffect(() => {
+        const forms = document.querySelectorAll("form.contact__form");
+        forms.forEach((form) => {
+            form.addEventListener("submit", handleFormSubmit, false);
+        });
+    }, []);
+
+    // ========== JSX ==========
 
     return (
-        <div
-            className='contacts'
-            id='contacts'
-            style={{ backgroundColor: theme.secondary }}
-        >
+        <div className='contacts' id='contacts' style={{ backgroundColor: theme.secondary }}>
             <div className='contacts--container'>
-                <h1 style={{ color: '#FFFFFF'}}>Contato</h1>
+                <h1 style={{ color: '#FFFFFF' }}>Contato</h1>
                 <div className='contacts-body'>
                     <form
-  id="Forms-Contato"
-  method="POST"
-  data-email="sarahsophiapinto@gmail.com"
-  action="https://script.google.com/macros/s/AKfycbzuqPogDl8RMvYcp1lYY78bXky6jO75Ei0Btn1NxPjC3JAcpLD5VxVop8pdadtBm1YAmA/exec"
-  className="contact__form"
->
-  <div className="input-container">
-    <label htmlFor="name" className={classes.label}>
-      Nome
-    </label>
-    <input
-      required
-      placeholder="Insira seu nome completo"
-      type="text"
-      name="Name"
-      id="name"
-      className={`form-input ${classes.input}`}
-    />
-  </div>
+                        id="Forms-Contato"
+                        method="POST"
+                        data-email="sarahsophiapinto@gmail.com"
+                        action="https://script.google.com/macros/s/AKfycbzuqPogDl8RMvYcp1lYY78bXky6jO75Ei0Btn1NxPjC3JAcpLD5VxVop8pdadtBm1YAmA/exec"
+                        className="contact__form"
+                    >
+                        <div className="input-container">
+                            <label htmlFor="name" className={classes.label}>Nome</label>
+                            <input
+                                required
+                                placeholder="Insira seu nome completo"
+                                type="text"
+                                name="Name"
+                                id="name"
+                                className={`form-input ${classes.input}`}
+                            />
+                        </div>
 
-  <div className="input-container">
-    <label htmlFor="phone" className={classes.label}>
-      Telefone
-    </label>
-    <input
-      required
-      placeholder="(00) 00000-0000"
-      type="tel"
-      name="Phone"
-      id="phone"
-      className={`form-input ${classes.input}`}
-    />
-  </div>
+                        <div className="input-container">
+                            <label htmlFor="phone" className={classes.label}>Telefone</label>
+                            <input
+                                required
+                                placeholder="(00) 00000-0000"
+                                type="tel"
+                                name="Phone"
+                                id="phone"
+                                className={`form-input ${classes.input}`}
+                            />
+                        </div>
 
-  <div className="input-container">
-    <label htmlFor="email" className={classes.label}>
-      E-mail
-    </label>
-    <input
-      required
-      placeholder="Insira seu e-mail"
-      type="email"
-      name="Email"
-      id="email"
-      className={`form-input ${classes.input}`}
-    />
-  </div>
+                        <div className="input-container">
+                            <label htmlFor="email" className={classes.label}>E-mail</label>
+                            <input
+                                required
+                                placeholder="Insira seu e-mail"
+                                type="email"
+                                name="Email"
+                                id="email"
+                                className={`form-input ${classes.input}`}
+                            />
+                        </div>
 
-  <div className="input-container">
-    <label htmlFor="terms" className={classes.label}>
-      Termos de Conduta
-    </label>
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-      <input
-        type="checkbox"
-        required
-        name="AcceptedTerms"
-        id="terms"
-        style={{ width: '18px', height: '18px' }}
-      />
-      <label htmlFor="terms" style={{ color: theme.tertiary, fontSize: '0.9rem' }}>
-        Declaro que li e aceito os <a href="/termos" target="_blank" rel="noopener noreferrer" style={{ color: theme.primary, textDecoration: 'underline' }}>termos de conduta</a>.
-      </label>
-    </div>
-  </div>
+                        <div className="input-container">
+                            <label htmlFor="terms" className={classes.label}>Termos de Conduta</label>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                                <input
+                                    type="checkbox"
+                                    required
+                                    name="AcceptedTerms"
+                                    id="terms"
+                                    style={{ width: '18px', height: '18px' }}
+                                />
+                                <label htmlFor="terms" style={{ color: theme.tertiary, fontSize: '0.9rem' }}>
+                                    Declaro que li e aceito os <a href="/termos" target="_blank" rel="noopener noreferrer" style={{ color: theme.primary, textDecoration: 'underline' }}>termos de conduta</a>.
+                                </label>
+                            </div>
+                        </div>
 
-  <div className="thankyou_message" style={{ display: 'none' }}>
-    <p>Obrigada por se inscrever! Em breve entraremos em contato.</p>
-  </div>
+                        <div className="thankyou_message" style={{ display: 'none' }}>
+                            <p>Obrigada por se inscrever! Em breve entraremos em contato.</p>
+                        </div>
 
-  <div className="submit-btn">
-    <button type="submit" className={classes.submitBtn}>
-      <p>{!success ? 'Quero ser membro' : 'Enviado'}</p>
-      <div className="submit-icon">
-        <AiOutlineSend
-          className="send-icon"
-          style={{
-            animation: !success ? 'initial' : 'fly 0.8s linear both',
-            position: success ? 'absolute' : 'initial',
-          }}
-        />
-        <AiOutlineCheckCircle
-          className="success-icon"
-          style={{
-            display: !success ? 'none' : 'inline-flex',
-            opacity: !success ? '0' : '1',
-          }}
-        />
-      </div>
-    </button>
-  </div>
-</form>
+                        <div className="submit-btn">
+                            <button type="submit" className={classes.submitBtn}>
+                                <p>{!success ? 'Quero ser membro' : 'Enviado'}</p>
+                            </button>
+                        </div>
+                    </form>
+
                     <div className='contacts-details'>
-                        <a
-                            href={`mailto:${contactsData.email}`}
-                            className='personal-details'
-                        >
-                            <div className={classes.detailsIcon}>
-                                <FiAtSign />
-                            </div>
-                            <p style={{ color: theme.tertiary }}>
-                                {contactsData.email}
-                            </p>
+                        <a href={`mailto:${contactsData.email}`} className='personal-details'>
+                            <div className={classes.detailsIcon}><FiAtSign /></div>
+                            <p style={{ color: theme.tertiary }}>{contactsData.email}</p>
                         </a>
-                        <a
-                            href={`tel:${contactsData.instagram}`}
-                            className='personal-details'
-                        >
-                            <div className={classes.detailsIcon}>
-                                <FaInstagram aria-label='Instagram' />
-                            </div>
-                            <p style={{ color: theme.tertiary }}>
-                                {contactsData.instagram}
-                            </p>
+                        <a href={contactsData.instagram} target="_blank" rel="noopener noreferrer" className='personal-details'>
+                            <div className={classes.detailsIcon}><FaInstagram /></div>
+                            <p style={{ color: theme.tertiary }}>{contactsData.instagram}</p>
                         </a>
                         <div className='personal-details'>
-                            <div className={classes.detailsIcon}>
-                                <HiOutlineLocationMarker />
-                            </div>
-                            <p style={{ color: theme.tertiary }}>
-                                {contactsData.address}
-                            </p>
+                            <div className={classes.detailsIcon}><HiOutlineLocationMarker /></div>
+                            <p style={{ color: theme.tertiary }}>{contactsData.address}</p>
                         </div>
                     </div>
                 </div>
