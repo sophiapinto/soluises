@@ -7,13 +7,14 @@ body {
   padding: 0 10px; /* Garante que o conteúdo fique dentro */
 }
 
-.about .line-styling{
+.about .line-styling {
   position: absolute;
   top: 50px;
   left: 50%;
   transform: translateX(-50%);
   height: 50px;
   width: 85%;
+  max-width: 600px; /* ✅ adiciona um limite seguro */
 
   display: flex;
   align-items: center;
