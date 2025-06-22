@@ -6,7 +6,7 @@ import { HiOutlineLocationMarker } from 'react-icons/hi';
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { contactsData } from '../../data/contactsData';
-import './Contacts.css';
+import './QueroSerMembro.css';
 
 function QueroSerMembro() {
     const [success, setSuccess] = useState(false);
