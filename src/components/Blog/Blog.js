@@ -55,6 +55,7 @@ function Blog() {
                                     title={blog.title}
                                     desc={blog.description}
                                     date={blog.date}
+                                    image={blog.image}
                                     key={blog.id}
                                     id={blog.id}
                                 />
