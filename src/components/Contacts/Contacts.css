@@ -1,87 +1,97 @@
-.querosermembro {
-  background-color: #1E2230;
-  padding: 3rem 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: auto;
-}
-
-.querosermembro-container {
-  max-width: 1100px;
-  width: 100%;
-  background-color: #1E2230;
-  color: #FFFFFF;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.5rem;
-  text-align: left;
-}
-
-.querosermembro-container h1 {
-  font-size: 2.5rem;
-  color: #FEEA0D;
-  font-family: var(--primaryFont);
-  margin-bottom: 0.5rem;
-  line-height: 1.2;
-}
-
-.querosermembro-container p {
-  font-size: 1.1rem;
-  color: #FFFFFF;
-  max-width: 700px;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-  font-family: var(--primaryFont);
-}
-
-.querosermembro-container button {
-  background-color: #D63826;
-  color: #FFFFFF;
-  border: none;
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
-  font-weight: bold;
-  font-family: var(--primaryFont);
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.querosermembro-container button:hover {
-  background-color: #3EA681;
-  color: #1E2230;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .querosermembro-container {
+.contacts {
+    background-color: #1E2230;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    text-align: center;
-    padding: 0 1rem;
-  }
-
-  .querosermembro-container h1 {
-    font-size: 2rem;
-  }
-
-  .querosermembro-container p {
-    font-size: 1rem;
-  }
 }
 
-@media (max-width: 480px) {
-  .querosermembro-container h1 {
-    font-size: 1.6rem;
-  }
+.contacts--container {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+}
 
-  .querosermembro-container p {
-    font-size: 0.95rem;
-  }
+.contacts--container > h1 {
+    font-family: var(--primaryFont);
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: #FFFFFF;
+    text-align: left;
+}
 
-  .querosermembro-container button {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.95rem;
-  }
+.contacts-body {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 2rem;
+}
+
+.contacts-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.personal-details {
+    display: flex;
+    align-items: center;
+}
+
+.personal-details p {
+    margin-left: 1rem;
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 500;
+    font-family: var(--primaryFont);
+    color: #FFFFFF;
+    word-break: break-word;
+    max-width: 400px;
+}
+
+/* RESPONSIVO */
+@media screen and (max-width: 768px) {
+    .contacts--container {
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .contacts--container > h1 {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .contacts-body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contacts-details {
+        align-items: center;
+        text-align: center;
+    }
+
+    .personal-details {
+        justify-content: center;
+    }
+
+    .personal-details p {
+        margin-left: 0.8rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contacts--container > h1 {
+        font-size: 1.8rem;
+    }
+
+    .personal-details p {
+        font-size: 0.9rem;
+        max-width: 90%;
+    }
 }
