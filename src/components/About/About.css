@@ -6,10 +6,10 @@ body {
 .about {
   overflow-x: hidden;
   padding: 0 10px;
-  background-color: #1E2230; /* Adicionado para garantir contexto visual */
+  background-color: #1E2230;
 }
 
-/* Linha e círculos verdes */
+/* Linha e círculos verdes fixos */
 .about .line-styling {
   position: relative;
   top: 0;
@@ -69,7 +69,7 @@ body {
   font-family: var(--primaryFont);
 }
 
-/* Responsividade */
+/* Responsividade: apenas texto ajustável */
 @media (min-width: 992px) and (max-width: 1380px) {
   .about-description > h2 {
     font-size: 2.3rem;
@@ -100,15 +100,6 @@ body {
   .about-description > p {
     font-size: 1.05rem;
   }
-
-  .about .line-styling .style-line {
-    width: 40px;
-  }
-
-  .about .line-styling .style-circle {
-    width: 8px;
-    height: 8px;
-  }
 }
 
 @media screen and (max-width: 600px) {
@@ -118,15 +109,5 @@ body {
 
   .about-description > p {
     font-size: 0.95rem;
-  }
-
-  .about .line-styling .style-line {
-    width: 35px;
-    height: 3px;
-  }
-
-  .about .line-styling .style-circle {
-    width: 6px;
-    height: 6px;
   }
 }
