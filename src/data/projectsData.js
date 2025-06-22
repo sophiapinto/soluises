@@ -8,54 +8,54 @@ import six from '../assets/report/report-12.jpeg';
 export const projectsData = [
     {
         id: 1,
-        projectName: '',
+        projectName: 'Report 07',
         projectDesc: '',
-        tags: [],
+        tags: ['Inovação'],
         code: '',
         demo: 'https://inovonline.vercel.app/',
         image: one
     },
     {
         id: 2,
-        projectName: '',
+        projectName: 'Report 08',
         projectDesc: '',
-        tags: [],
+        tags: ['Inovação'],
         code: '',
         demo: 'https://acmengenhariacivil.vercel.app/',
         image: two
     },
     {
         id: 3,
-        projectName: '',
+        projectName: 'Report 09',
         projectDesc: '',
-        tags: [],
+        tags: ['Inovação'],
         code: '',
         demo: 'https://vacbook.vercel.app/',
         image: three
     },
     {
         id: 4,
-        projectName: '',
+        projectName: 'Report 09',
         projectDesc: '',
-        tags: [],
+        tags: ['Inovação'],
         code: '',
         demo: 'https://sarahsophiapinto-d04de.chat.blip.ai/?appKey=cG91cGFjaGF0Ojg1MjRiMDVmLTI3MzMtNDJmMS1hZDI0LWIyMzNjZGY2NjU5Zg==',
         image: four
     },
     {
         id: 5,
-        projectName: '',
+        projectName: 'Report 10',
         projectDesc: '',
-        tags: [],
+        tags: ['Inovação'],
         code: '',
         demo: 'https://sarahsophiapinto-d04de.chat.blip.ai/?appKey=cG91cGFjaGF0Ojg1MjRiMDVmLTI3MzMtNDJmMS1hZDI0LWIyMzNjZGY2NjU5Zg==',
         image: five
     },
     {
         id: 6,
-        projectName: '',
+        projectName: 'Report 11',
         projectDesc: '',
-        tags: [],
+        tags: []'Inovação',
         code: '',
         demo: 'https://sarahsophiapinto-d04de.chat.blip.ai/?appKey=cG91cGFjaGF0Ojg1MjRiMDVmLTI3MzMtNDJmMS1hZDI0LWIyMzNjZGY2NjU5Zg==',
         image: six
