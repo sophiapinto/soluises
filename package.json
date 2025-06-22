@@ -31,15 +31,7 @@
   "eslintConfig": {
     "extends": [
     "react-app",
-    "react-app/jest",
-    "airbnb-typescript",
-    "plugin:@typescript-eslint/recommended",
-    "prettier/react",
-    "prettier/@typescript-eslint",
-    "plugin:prettier/recommended",
-    "plugin:import/errors", 
-    "plugin:import/warnings",
-    "plugin:import/typescript"
+    "react-app/jest"
     ]
   },
   "browserslist": {
