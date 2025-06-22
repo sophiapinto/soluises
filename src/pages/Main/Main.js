@@ -1,4 +1,4 @@
-import { Navbar, Footer, Landing, About, Testimonials, Education, Contacts, Projects, Blog, QueroSerMembro } from '../../components'
+import { Navbar, Footer, Landing, About, Testimonials, Education, Contacts, Projects, Blog, QueroSerMembro, Skills } from '../../components'
 
 function Main() {
     return (
@@ -8,6 +8,7 @@ function Main() {
             <About />
             <Testimonials />
             <Education /> {/*IMPACTO*/}
+            <Skills /> {/*Galeria*/}
             <Blog /> {/*AÇÕES*/}
             <Projects /> {/*REPORTS*/}
             <QueroSerMembro  />

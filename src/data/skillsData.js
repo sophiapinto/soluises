@@ -1,13 +1,16 @@
  export const skillsData = [
-    'HTML',
-    'Figma',
-    'Javascript',
-    'CSS',
-    'Canva',
-    'C',
-    'Python',
-    'React',
-    'C++',
+    'image1',
+    'image2',
+    'image3',
+    'image4',
+    'image5',
+    'image6',
+    'image7',
+    'image8',
+    'image9',
+    'image10',
+    'image11',
+    'image12',
 ]
 
 // Choose your skills from below. Make sure it's in the same format and spelled correctly.
