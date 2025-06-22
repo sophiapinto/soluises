@@ -81,6 +81,7 @@
   font-size: 3.25rem;
   line-height: 110%;
   margin: 1rem 0;
+  text-align: center;
 }
 
 .lcr--content p {
@@ -88,12 +89,14 @@
   font-weight: 500;
   font-size: 1.15rem;
   opacity: 0.7;
+  text-align: justify;
 }
 
 .lcr-buttonContainer {
   margin-top: 2rem;
-  width: 350px;
+  /*width: 350px;*/
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   font-family: "var(--primaryFont)", sans-serif;
@@ -113,6 +116,7 @@
 
   .lcr--content h1 {
     font-size: 3rem;
+    
   }
 
   .lcr--content p {
@@ -125,9 +129,9 @@
   .lcr-buttonContainer {
     margin-top: 1rem;
     flex-direction: column;
-    width: 200px;
+    width: 300px;
     height: 120px;
-    align-items: flex-start;
+    align-items: center;
   }
 }
 
@@ -148,12 +152,13 @@
   .lcr-buttonContainer {
     margin-top: 1rem;
     flex-direction: column;
-    width: 200px;
+    width: 300px;
     height: 120px;
-    align-items: flex-start;
+    align-items: center;
   }
   .lcr-buttonContainer button:nth-child(2) {
     display: none;
+    width: 180px;
   }
 }
 
@@ -206,6 +211,7 @@
     text-align: center;
     margin: 0 auto;
     width: 90%;
+    text-align: justify;
   }
   .lcr-buttonContainer {
     margin: 0 auto;

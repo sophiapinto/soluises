@@ -16,7 +16,7 @@ function Landing() {
             borderRadius: '30px',
             textTransform: 'inherit',
             textDecoration: 'none',
-            width: '150px',
+            width: '200px', // button princiapl vermelho antes era 150 px
             fontSize: '1rem',
             fontWeight: '500',
             height: '50px',
@@ -29,7 +29,7 @@ function Landing() {
                 border: `3px solid ${theme.tertiary}`,
             },
             [t.breakpoints.down('sm')]: {
-                width: '180px',
+                width: '200px',
             },
         },
     }));
