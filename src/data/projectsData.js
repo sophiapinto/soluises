@@ -1,9 +1,9 @@
 import one from '../assets/report/report-07.jpeg';
-import two from 'src/assets/report/report-08.jpeg';
-import three from 'src/assets/report/report-09.jpeg';
-import four from 'src/assets/report/report-10.jpeg';
-import five from 'src/assets/report/report-11.jpeg';
-import six from 'src/assets/report/report-12.jpeg';
+import two from '../assets/report/report-08.jpeg';
+import three from '../assets/report/report-09.jpeg';
+import four from '../assets/report/report-10.jpeg';
+import five from '../assets/report/report-11.jpeg';
+import six from '../assets/report/report-12.jpeg';
 
 export const projectsData = [
     {
