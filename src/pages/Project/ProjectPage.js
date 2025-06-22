@@ -69,9 +69,7 @@ function ProjectPage() {
 
     return (
         <div className="projectPage" style={{backgroundColor: theme.secondary}}>
-            <Helmet>
-                <title>{headerData.name} | Projetos</title>
-            </Helmet>
+
             <div className="projectPage-header" style={{backgroundColor:theme.primary}}>
                 <Link to="/">
                         <AiOutlineHome className={classes.home}/>
