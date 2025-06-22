@@ -55,7 +55,7 @@ export const projectsData = [
         id: 6,
         projectName: 'Report 11',
         projectDesc: '',
-        tags: []'Inovação',
+        tags: ['Inovação'],
         code: '',
         demo: 'https://sarahsophiapinto-d04de.chat.blip.ai/?appKey=cG91cGFjaGF0Ojg1MjRiMDVmLTI3MzMtNDJmMS1hZDI0LWIyMzNjZGY2NjU5Zg==',
         image: six
