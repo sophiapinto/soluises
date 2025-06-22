@@ -1,6 +1,7 @@
 .about {
     min-height: 100vh;
     position: relative;
+    overflow-x: hidden;
 }
 
 .about .line-styling{
@@ -34,8 +35,9 @@
     margin-left: 10%;
     margin-right: 10%;
     padding-top: 8rem;
-    width: 150%;
+    width: 100%; /* ou remova essa linha */
     height: 100%;
+    box-sizing: border-box; /* adicionado para segurança */
 }
 
 .about-description {
