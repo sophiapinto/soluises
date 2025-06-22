@@ -1,166 +1,87 @@
-:root {
-  --red: #D63826;
-  --green: #3EA681;
-  --black: #1E2230;
-  --yellow: #FEEA0D;
-  --white: #FFFFFF;
-  --primaryFont: 'Inter', sans-serif;
-}
-
-/* SEÇÃO */
-.queroser-container {
-  min-height: 100vh;
-  background-color: var(--black);
+.querosermembro {
+  background-color: #1E2230;
+  padding: 3rem 1rem;
   display: flex;
-  flex-direction: column;
-  padding: 2rem 6rem;
-  color: var(--white);
+  justify-content: center;
+  align-items: center;
+  min-height: auto;
 }
 
-/* TÍTULO */
-.queroser-container h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  font-family: var(--primaryFont);
-  margin-bottom: 2rem;
-  color: var(--white);
-}
-
-/* FORMULÁRIO */
-.queroser-form {
-  display: flex;
-  flex-direction: column;
+.querosermembro-container {
+  max-width: 1100px;
   width: 100%;
+  background-color: #1E2230;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 1.5rem;
+  text-align: left;
 }
 
-.queroser-form .input-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.queroser-form label {
-  font-weight: 600;
-  font-size: 0.95rem;
+.querosermembro-container h1 {
+  font-size: 2.5rem;
+  color: #FEEA0D;
+  font-family: var(--primaryFont);
   margin-bottom: 0.5rem;
-  color: var(--white);
+  line-height: 1.2;
+}
+
+.querosermembro-container p {
+  font-size: 1.1rem;
+  color: #FFFFFF;
+  max-width: 700px;
+  line-height: 1.5;
+  margin-bottom: 1rem;
   font-family: var(--primaryFont);
 }
 
-.queroser-form input,
-.queroser-form textarea {
-  padding: 0.8rem;
-  font-size: 1rem;
-  font-family: var(--primaryFont);
-  border: 2px solid var(--red);
-  border-radius: 10px;
-  outline: none;
-  background-color: var(--black);
-  color: var(--white);
-}
-
-.queroser-form input::placeholder,
-.queroser-form textarea::placeholder {
-  color: #cccccc;
-  font-size: 0.95rem;
-}
-
-.queroser-form textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-/* CHECKBOX */
-.queroser-form .checkbox-group {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  color: var(--white);
-}
-
-.queroser-form .checkbox-group input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  accent-color: var(--red);
-}
-
-/* LINK DOS TERMOS */
-.queroser-form .checkbox-group a {
-  color: var(--yellow);
-  text-decoration: underline;
-}
-
-/* BOTÃO */
-.submit-btn {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.submit-btn button {
-  background-color: var(--red);
-  color: var(--white);
-  font-weight: 600;
-  font-size: 1rem;
+.querosermembro-container button {
+  background-color: #D63826;
+  color: #FFFFFF;
   border: none;
-  padding: 0.8rem 1.8rem;
-  border-radius: 50px;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
   font-family: var(--primaryFont);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  border-radius: 30px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.submit-btn button:hover {
-  background-color: var(--green);
-  color: var(--white);
+.querosermembro-container button:hover {
+  background-color: #3EA681;
+  color: #1E2230;
 }
 
-/* ÍCONES */
-.send-icon {
-  font-size: 22px;
-  transform: translate(5px,-3px) rotate(-30deg);
-}
-
-.success-icon {
-  font-size: 24px;
-  transition: all 0.3s 0.8s ease-in-out;
-}
-
-/* MENSAGEM DE OBRIGADO */
-.thankyou_message {
-  font-family: var(--primaryFont);
-  font-size: 1rem;
-  color: var(--green);
-  margin-top: 1.5rem;
-}
-
-/* RESPONSIVO */
-@media screen and (max-width: 992px) {
-  .queroser-container {
-    padding: 2rem 3rem;
-  }
-
-  .queroser-container h1 {
-    font-size: 2.5rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .queroser-container {
-    padding: 1.5rem 1rem;
-  }
-
-  .queroser-container h1 {
-    font-size: 2rem;
+/* Responsivo */
+@media (max-width: 768px) {
+  .querosermembro-container {
+    align-items: center;
     text-align: center;
+    padding: 0 1rem;
   }
 
-  .submit-btn {
-    justify-content: center;
+  .querosermembro-container h1 {
+    font-size: 2rem;
+  }
+
+  .querosermembro-container p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .querosermembro-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .querosermembro-container p {
+    font-size: 0.95rem;
+  }
+
+  .querosermembro-container button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.95rem;
   }
 }
