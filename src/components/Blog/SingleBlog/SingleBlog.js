@@ -17,11 +17,6 @@ function SingleBlog({ theme, title, desc, date, image, id }) {
                     <h3 style={{color: '#ffffff'}}>{title}</h3>
                     <h6 style={{color: '#ffffff'}}>{desc}</h6>
                 </div>
-                <Button>
-                    <a href={`/blog/${id}`} style={{textDecoration: 'none', padding:'10px',borderRadius: '20px', backgroundColor:'#ffffff',color: '#D63826'}}>
-                        Saber mais
-                    </a>
-                </Button>
             </a>
         </Fade>
     )
