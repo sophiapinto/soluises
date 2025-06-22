@@ -1,7 +1,10 @@
+body {
+  overflow-x: hidden;
+}
+
 .about {
-    min-height: 100vh;
-    position: relative;
-    overflow-x: hidden;
+  overflow-x: hidden;
+  padding: 0 10px; /* Garante que o conteúdo fique dentro */
 }
 
 .about .line-styling{
@@ -29,24 +32,20 @@
 }
 
 .about-body {
+    width: 100%; /* substitua o 150% */
+    margin: 0 auto;
+    padding: 8rem 10%;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
-    position: relative;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-top: 8rem;
-    width: 100%; /* ou remova essa linha */
-    height: 100%;
-    box-sizing: border-box; /* adicionado para segurança */
+    flex-direction: column;
 }
 
 .about-description {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 0.5;
   width: 100%;
+  max-width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
   text-align: center;
 }
 
@@ -139,4 +138,12 @@
     .about-description > p{
       font-size: 0.95rem;
     }
+}
+
+@media screen and (max-width: 768px) {
+  .about .line-styling {
+    width: 90%;
+    left: 5%;
+    transform: none;
+  }
 }
