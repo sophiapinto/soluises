@@ -102,7 +102,6 @@ function Navbar() {
     return (
         <div className="navbar">
             <div className="navbar--container">
-                <h1>PROTOTIPO SITE SOLUISES</h1>
                 <IoMenuSharp className={classes.navMenu} onClick={handleDrawerOpen} aria-label="Menu" />
             </div>
 
