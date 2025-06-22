@@ -1,6 +1,7 @@
 .about {
     position: relative;
     align-items: center;
+    max-width: 100vh;
 }
 
 .about .line-styling{
