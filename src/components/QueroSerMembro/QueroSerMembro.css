@@ -1,177 +1,166 @@
-.quero-ser-membro {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: relative;
-    padding: 2rem 6rem 3rem;
-    background-color: var(--secondary);
+:root {
+  --red: #D63826;
+  --green: #3EA681;
+  --black: #1E2230;
+  --yellow: #FEEA0D;
+  --white: #FFFFFF;
+  --primaryFont: 'Inter', sans-serif;
 }
 
-.quero-ser-membro h1 {
-    font-family: var(--primaryFont);
-    font-size: 3.5rem;
-    color: white;
-    margin-bottom: 2.5rem;
+/* SEÇÃO */
+.queroser-container {
+  min-height: 100vh;
+  background-color: var(--black);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 6rem;
+  color: var(--white);
 }
 
-.quero-ser-membro-body {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    gap: 4rem;
+/* TÍTULO */
+.queroser-container h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: var(--primaryFont);
+  margin-bottom: 2rem;
+  color: var(--white);
 }
 
-.contact__form {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+/* FORMULÁRIO */
+.queroser-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1.5rem;
 }
 
-.input-container {
-    width: 100%;
+.queroser-form .input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.form-input, .form-message {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    border-radius: 20px;
-    font-family: var(--primaryFont);
-    resize: none;
-    box-sizing: border-box;
-    margin-bottom: 1rem;
-    height: 50px;
+.queroser-form label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+  font-family: var(--primaryFont);
 }
 
-.form-message {
-    height: 150px;
+.queroser-form input,
+.queroser-form textarea {
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-family: var(--primaryFont);
+  border: 2px solid var(--red);
+  border-radius: 10px;
+  outline: none;
+  background-color: var(--black);
+  color: var(--white);
 }
 
-.thankyou_message {
-    color: black;
-    font-size: 15px;
-    margin: 20px 0;
-    font-family: var(--primaryFont);
-    display: none;
+.queroser-form input::placeholder,
+.queroser-form textarea::placeholder {
+  color: #cccccc;
+  font-size: 0.95rem;
 }
 
+.queroser-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* CHECKBOX */
+.queroser-form .checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--white);
+}
+
+.queroser-form .checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--red);
+}
+
+/* LINK DOS TERMOS */
+.queroser-form .checkbox-group a {
+  color: var(--yellow);
+  text-decoration: underline;
+}
+
+/* BOTÃO */
 .submit-btn {
-    display: flex;
-    justify-content: flex-start;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .submit-btn button {
-    border: none;
-    outline: none;
-    width: 160px;
-    height: 50px;
-    border-radius: 25px;
-    font-weight: 500;
-    font-family: var(--primaryFont);
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
+  background-color: var(--red);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-family: var(--primaryFont);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.submit-icon {
-    display: flex;
-    align-items: center;
+.submit-btn button:hover {
+  background-color: var(--green);
+  color: var(--white);
 }
 
+/* ÍCONES */
 .send-icon {
-    font-size: 25px;
-    transform-origin: center;
-    transform: translate(5px,-3px) rotate(-30deg);
+  font-size: 22px;
+  transform: translate(5px,-3px) rotate(-30deg);
 }
 
 .success-icon {
-    font-size: 26px;
-    transition: all 0.3s 0.8s ease-in-out;
+  font-size: 24px;
+  transition: all 0.3s 0.8s ease-in-out;
 }
 
-.quero-ser-membro-details {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 2rem;
+/* MENSAGEM DE OBRIGADO */
+.thankyou_message {
+  font-family: var(--primaryFont);
+  font-size: 1rem;
+  color: var(--green);
+  margin-top: 1.5rem;
 }
 
-.personal-details {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    font-family: var(--primaryFont);
-}
-
-.personal-details p {
-    font-size: 18px;
-    font-weight: 500;
-    word-break: break-word;
-    color: var(--tertiary);
-}
-
+/* RESPONSIVO */
 @media screen and (max-width: 992px) {
-    .quero-ser-membro {
-        padding: 2rem 4rem;
-    }
+  .queroser-container {
+    padding: 2rem 3rem;
+  }
 
-    .quero-ser-membro-body {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .quero-ser-membro-details {
-        padding: 1rem;
-        align-items: center;
-    }
-
-    .quero-ser-membro h1 {
-        font-size: 2.8rem;
-        text-align: center;
-    }
+  .queroser-container h1 {
+    font-size: 2.5rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
-    .quero-ser-membro {
-        padding: 2rem;
-    }
+  .queroser-container {
+    padding: 1.5rem 1rem;
+  }
 
-    .form-input, .form-message {
-        height: auto;
-    }
+  .queroser-container h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
 
-    .submit-btn {
-        justify-content: center;
-    }
-
-    .submit-btn button {
-        width: 100%;
-    }
-
-    .personal-details p {
-        font-size: 1rem;
-        text-align: center;
-    }
-}
-
-@keyframes fly {
-    10% {
-        transform: rotate(0deg);
-    }
-    20% {
-        transform: translateX(-10px);
-    }
-    70% {
-        transform: translateX(60px);
-    }
-    100% {
-        transform: translateX(80px);
-    }
+  .submit-btn {
+    justify-content: center;
+  }
 }
