@@ -1,9 +1,14 @@
+import one from '../assets/img-meetup.jpg';
+import two from '../assets/img-officehour.HEIF';
+import three from '../assets/img-premiosoluises.JPEG';
+
 export const blogData = [
     {
         id: 1,
         title: 'MEETUP',
         description: 'Encontros temáticos abertos para trocar experiências, aprender em comunidade e impulsionar ideias na inovação maranhense.',
         date: '',
+        image: one,
         url: ''
     },
     {
@@ -11,6 +16,7 @@ export const blogData = [
         title: 'OFFICE HOUR',
         description: 'Encontro mensais da SOLuises em São Luís para coworking, pitches e networking entre quem faz a inovação acontecer no Maranhão.',
         date: '',
+        image: two,
         url: ''
     },
     {
@@ -18,6 +24,7 @@ export const blogData = [
         title: 'PRÊMIO SOLUISES',
         description: 'Premiação anual que celebra pessoas e projetos que transformam o Maranhão com inovação, impacto real e conexão nacional.',
         date: '',
+        image: three,
         url: ''
     }
 ]
