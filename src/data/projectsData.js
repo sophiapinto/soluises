@@ -1,52 +1,65 @@
-import one from '../assets/svg/projects/one.svg'
-import two from '../assets/svg/projects/two.svg'
-import eight from '../assets/svg/projects/eight.svg'
+import one from '../assets/report/report-07.png';
+import two from '../assets/report/report-08.png';
+import three from '../assets/report/report-09.png';
+import four from '../assets/report/report-10.png';
+import five from '../assets/report/report-11.png';
+import six from '../assets/report/report-12.png';
 
-/*
-import three from '../assets/svg/projects/three.svg'
-import four from '../assets/svg/projects/four.svg'
-
-import five from '../assets/svg/projects/five.svg'
-import six from '../assets/svg/projects/six.svg'
-import seven from '../assets/svg/projects/seven.svg'
-*/
 
 export const projectsData = [
     {
         id: 1,
-        projectName: 'InovOnline',
-        projectDesc: 'Plataforma de ensino online do projeto Maratoninha Maker.',
-        tags: ['React', 'Styled Components', 'NodeJS', 'Sequelize'],
+        projectName: '',
+        projectDesc: '',
+        tags: [''],
         code: '',
         demo: 'https://inovonline.vercel.app/',
-        image: eight
+        image: one
     },
     {
         id: 2,
-        projectName: 'ACM Engenharia Civil',
-        projectDesc: 'Portfólio online da empresa de Engenharia Civil: ACM.',
-        tags: ['Java Script', 'SCSS'],
+        projectName: '',
+        projectDesc: '',
+        tags: ['],
         code: '',
         demo: 'https://acmengenhariacivil.vercel.app/',
         image: two
     },
     {
         id: 3,
-        projectName: 'VacBook',
-        projectDesc: 'Ferramenta para verificação de aprazamento de vacinas.',
-        tags: ['REACT', 'PureComponents', 'NodeJS'],
-        code: 'https://github.com/sophiapinto/projeto',
+        projectName: '',
+        projectDesc: '',
+        tags: [''],
+        code: ',
         demo: 'https://vacbook.vercel.app/',
-        image: eight
+        image: three
     },
     {
         id: 4,
-        projectName: 'Poupachat',
-        projectDesc: 'Chatbot online para o ensino de Educação Financeira, desenvolvido no Maria vai com as Devs do LuizaLabs.',
-        tags: ['ChatBot', 'IA'],
+        projectName: '',
+        projectDesc: '',
+        tags: [''],
         code: '',
         demo: 'https://sarahsophiapinto-d04de.chat.blip.ai/?appKey=cG91cGFjaGF0Ojg1MjRiMDVmLTI3MzMtNDJmMS1hZDI0LWIyMzNjZGY2NjU5Zg==',
-        image: one
+        image: four
+    },
+    {
+        id: 5,
+        projectName: '',
+        projectDesc: '',
+        tags: [''],
+        code: '',
+        demo: 'https://sarahsophiapinto-d04de.chat.blip.ai/?appKey=cG91cGFjaGF0Ojg1MjRiMDVmLTI3MzMtNDJmMS1hZDI0LWIyMzNjZGY2NjU5Zg==',
+        image: five
+    },
+    {
+        id: 6,
+        projectName: '',
+        projectDesc: '',
+        tags: [''],
+        code: '',
+        demo: 'https://sarahsophiapinto-d04de.chat.blip.ai/?appKey=cG91cGFjaGF0Ojg1MjRiMDVmLTI3MzMtNDJmMS1hZDI0LWIyMzNjZGY2NjU5Zg==',
+        image: six
     },
     ]
 

@@ -38,7 +38,7 @@ function SingleProject({ id, name, desc, tags, image, theme }) {
             <div
                 key={id}
                 className='singleProject'
-                style={{ backgroundColor: '#D63826'}}
+                style={{ backgroundColor: '#D63826', borderRadius: '20px'}}
             >
                 <div className='projectContent'>
                     <img src={image ? image : placeholder} alt={name} />
