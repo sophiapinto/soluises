@@ -1,102 +1,68 @@
 .contacts {
     background-color: #1E2230;
-    min-height: 100vh;
+    padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: relative;
-    padding-bottom: 3rem;
+    align-items: center;
 }
 
 .contacts--container {
+    width: 100%;
+    max-width: 1100px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-start;
-    padding: 2rem 6rem 3rem;
-    width: 80%;
-    height: 100%;
-    margin-top: 2rem;
+    padding: 1rem;
 }
 
 .contacts--container > h1 {
     font-family: var(--primaryFont);
-    font-size: 3.5rem;
-    margin-bottom: 2.5rem;
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
     color: #FFFFFF;
+    text-align: left;
 }
 
 .contacts-body {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
     width: 100%;
+    gap: 2rem;
 }
 
 .contacts-details {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    flex: 0.6;
-    box-sizing: border-box;
-    padding-left: 7rem;
-    margin-top: 1.2rem;
+    gap: 1.5rem;
+    width: 100%;
 }
 
 .personal-details {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    margin-bottom: 2.5rem;
 }
 
 .personal-details p {
-    margin-left: 1.5rem;
-    font-size: 18px;
-    line-height: 110%;
+    margin-left: 1rem;
+    font-size: 1rem;
+    line-height: 1.4;
     font-weight: 500;
     font-family: var(--primaryFont);
-    width: 45%;
-    word-break: break-word;
     color: #FFFFFF;
+    word-break: break-word;
+    max-width: 400px;
 }
 
-.contacts--img {
-    display: none;
-}
-
-/* Responsividade */
-@media screen and (max-width: 992px) {
+/* RESPONSIVO */
+@media screen and (max-width: 768px) {
     .contacts--container {
-        width: 100%;
-        margin-top: 1rem;
-        padding: 2rem 4rem;
+        align-items: center;
+        padding: 1rem;
     }
 
     .contacts--container > h1 {
-        font-size: 3rem;
-        margin-bottom: 1.2rem;
-    }
-
-    .contacts-details {
-        padding-left: 4rem;
-    }
-
-    .personal-details p {
-        margin-left: 1rem;
-        font-size: 1rem;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .contacts--container {
-        align-items: center;
-        padding: 2rem;
+        font-size: 2.2rem;
+        text-align: center;
     }
 
     .contacts-body {
@@ -105,25 +71,27 @@
     }
 
     .contacts-details {
-        padding-left: 0;
-        padding: 1rem;
         align-items: center;
-        margin-top: 2rem;
+        text-align: center;
     }
 
     .personal-details {
-        margin-bottom: 1.8rem;
+        justify-content: center;
     }
 
     .personal-details p {
-        margin-left: 1.2rem;
-        width: 95%;
+        margin-left: 0.8rem;
+        font-size: 0.95rem;
     }
 }
 
-@media screen and (max-width: 400px) {
-    .contacts-details {
-        padding: 0;
-        align-items: center;
+@media screen and (max-width: 480px) {
+    .contacts--container > h1 {
+        font-size: 1.8rem;
+    }
+
+    .personal-details p {
+        font-size: 0.9rem;
+        max-width: 90%;
     }
 }
