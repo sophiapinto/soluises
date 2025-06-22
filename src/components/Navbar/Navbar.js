@@ -1,152 +1,165 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 import Fade from 'react-reveal/Fade';
 import { IoMenuSharp, IoHomeSharp } from 'react-icons/io5';
-import { HiDocumentText } from 'react-icons/hi';
 import { BsFillGearFill } from 'react-icons/bs';
 import { MdPhone } from 'react-icons/md';
-import { FaUser, FaFolderOpen } from 'react-icons/fa';
+import { FaUser } from 'react-icons/fa';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CloseIcon from '@material-ui/icons/Close';
 
 import './Navbar.css';
-import { ThemeContext } from '../../contexts/ThemeContext';
 
 function Navbar() {
-    const { theme, setHandleDrawer } = useContext(ThemeContext);
     const [open, setOpen] = useState(false);
 
-    const handleDrawerOpen = () => {
-        setOpen(true);
-        setHandleDrawer();
-    };
-
-    const handleDrawerClose = () => {
-        setOpen(false);
-        setHandleDrawer();
-    };
+    const handleDrawerOpen = () => setOpen(true);
+    const handleDrawerClose = () => setOpen(false);
 
     const useStyles = makeStyles((t) => ({
         navMenu: {
             fontSize: '2.5rem',
-            color: theme.tertiary,
+            color: '#1E2230',
             cursor: 'pointer',
             transform: 'translateY(-10px)',
+            transition: 'color 0.3s',
             '&:hover': {
-                color: theme.primary,
-            }
+                color: '#1E2230',
+            },
         },
         MuiDrawer: {
-            padding: '2rem 1rem',
-            width: '16rem',
-            background: theme.secondary,
+            padding: '0em 1.8em',
+            width: '14em',
+            fontFamily: 'var(--primaryFont)',
+            fontSize: '24px',
+            background: '#ffffff',
+            overflow: 'hidden',
             borderTopRightRadius: '40px',
             borderBottomRightRadius: '40px',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
             [t.breakpoints.down('sm')]: {
-                width: '14rem',
+                width: '12em',
             },
         },
         closebtnIcon: {
             fontSize: '2rem',
-            color: theme.primary,
-            position: 'absolute',
-            right: 30,
-            top: 30,
+            fontWeight: 'bold',
             cursor: 'pointer',
+            color: '#1E2230',
+            position: 'absolute',
+            right: 40,
+            top: 40,
             '&:hover': {
-                color: theme.tertiary,
-            }
+                color: '#1E2230',
+            },
+            [t.breakpoints.down('sm')]: {
+                right: 20,
+                top: 20,
+            },
         },
         drawerItem: {
-            borderRadius: '40px',
-            border: `2px solid ${theme.primary}`,
-            color: theme.primary,
-            fontWeight: 700,
-            fontSize: '1.1rem',
-            padding: '1rem 1.5rem',
-            width: '100%',
-            textAlign: 'center',
-            background: '#fff',
-            marginBottom: '1rem',
-            transition: 'all 0.3s ease',
+            margin: '2rem auto',
+            borderRadius: '78.8418px',
+            background: '#ffffff',
+            color: '#1E2230',
+            width: '85%',
+            height: '60px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-evenly',
+            padding: '0 30px',
+            border: '2px solid #1E2230',
+            transition: 'background-color 0.2s, color 0.2s',
             '&:hover': {
-                background: theme.primary,
-                color: theme.secondary,
-            }
+                background: '#1E2230',
+                color: '#ffffff',
+            },
+            [t.breakpoints.down('sm')]: {
+                width: '100%',
+                padding: '0 25px',
+                height: '55px',
+            },
         },
         drawerLinks: {
             fontFamily: 'var(--primaryFont)',
-            textDecoration: 'none',
+            width: '50%',
+            fontSize: '1.3rem',
+            fontWeight: 600,
+            [t.breakpoints.down('sm')]: {
+                fontSize: '1.125rem',
+            },
         },
         drawerIcon: {
-            display: 'none',
-        }
+            fontSize: '1.6rem',
+            [t.breakpoints.down('sm')]: {
+                fontSize: '1.385rem',
+            },
+        },
     }));
 
     const classes = useStyles();
 
     return (
-        <div className='navbar'>
-            <div className='navbar--container'>
+        <div className="navbar">
+            <div className="navbar--container">
                 <h1>PROTOTIPO SITE SOLUISES</h1>
-                <IoMenuSharp
-                    className={classes.navMenu}
-                    onClick={handleDrawerOpen}
-                    aria-label='Menu'
-                />
+                <IoMenuSharp className={classes.navMenu} onClick={handleDrawerOpen} aria-label="Menu" />
             </div>
+
             <Drawer
-                variant='temporary'
-                onClose={(event, reason) => {
-                    if (reason !== 'backdropClick') {
-                        handleDrawerClose();
-                    }
-                }}
-                anchor='left'
+                variant="temporary"
+                onClose={handleDrawerClose}
+                anchor="left"
                 open={open}
                 classes={{ paper: classes.MuiDrawer }}
-                className='drawer'
+                className="drawer"
                 disableScrollLock={true}
             >
-                <div className='div-closebtn'>
+                <div className="div-closebtn">
                     <CloseIcon
                         onClick={handleDrawerClose}
                         className={classes.closebtnIcon}
-                        role='button'
-                        tabIndex='0'
-                        aria-label='Fechar menu'
+                        role="button"
+                        tabIndex="0"
+                        aria-label="Fechar menu"
                     />
                 </div>
 
                 <div onClick={handleDrawerClose}>
-                    <div className='navLink--container'>
+                    <div className="navLink--container">
                         <Fade left>
-                            <NavLink to='/#about' smooth spy duration={2000}>
-                                <div className={classes.drawerItem}>Quero conhecer</div>
+                            <NavLink to="/" smooth={true} duration={2000}>
+                                <div className={classes.drawerItem}>
+                                    <IoHomeSharp className={classes.drawerIcon} />
+                                    <span className={classes.drawerLinks}>Home</span>
+                                </div>
                             </NavLink>
                         </Fade>
+
                         <Fade left>
-                            <NavLink to='/#services' smooth spy duration={2000}>
-                                <div className={classes.drawerItem}>Quero ser Membro</div>
+                            <NavLink to="/#about" smooth={true} duration={2000}>
+                                <div className={classes.drawerItem}>
+                                    <FaUser className={classes.drawerIcon} />
+                                    <span className={classes.drawerLinks}>Sobre</span>
+                                </div>
                             </NavLink>
                         </Fade>
+
                         <Fade left>
-                            <NavLink to='/#blog' smooth spy duration={2000}>
-                                <div className={classes.drawerItem}>Nossas Ações</div>
+                            <NavLink to="/#services" smooth={true} duration={2000}>
+                                <div className={classes.drawerItem}>
+                                    <BsFillGearFill className={classes.drawerIcon} />
+                                    <span className={classes.drawerLinks}>Serviços</span>
+                                </div>
                             </NavLink>
                         </Fade>
+
                         <Fade left>
-                            <NavLink to='/#report' smooth spy duration={2000}>
-                                <div className={classes.drawerItem}>Report</div>
-                            </NavLink>
-                        </Fade>
-                        <Fade left>
-                            <NavLink to='/#contacts' smooth spy duration={2000}>
-                                <div className={classes.drawerItem}>Contato</div>
+                            <NavLink to="/#contacts" smooth={true} duration={2000}>
+                                <div className={classes.drawerItem}>
+                                    <MdPhone className={classes.drawerIcon} />
+                                    <span className={classes.drawerLinks}>Contato</span>
+                                </div>
                             </NavLink>
                         </Fade>
                     </div>
