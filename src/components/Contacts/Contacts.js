@@ -264,9 +264,101 @@ function Contacts() {
             style={{ backgroundColor: theme.secondary }}
         >
             <div className='contacts--container'>
-                <h1 style={{ color: '#FFFFFF'}}>Contatos</h1>
+                <h1 style={{ color: '#FFFFFF'}}>Contato</h1>
                 <div className='contacts-body'>
-                    
+                    <form
+  id="Forms-Contato"
+  method="POST"
+  data-email="sarahsophiapinto@gmail.com"
+  action="https://script.google.com/macros/s/AKfycbzuqPogDl8RMvYcp1lYY78bXky6jO75Ei0Btn1NxPjC3JAcpLD5VxVop8pdadtBm1YAmA/exec"
+  className="contact__form"
+>
+  <div className="input-container">
+    <label htmlFor="name" className={classes.label}>
+      Nome
+    </label>
+    <input
+      required
+      placeholder="Insira seu nome completo"
+      type="text"
+      name="Name"
+      id="name"
+      className={`form-input ${classes.input}`}
+    />
+  </div>
+
+  <div className="input-container">
+    <label htmlFor="phone" className={classes.label}>
+      Telefone
+    </label>
+    <input
+      required
+      placeholder="(00) 00000-0000"
+      type="tel"
+      name="Phone"
+      id="phone"
+      className={`form-input ${classes.input}`}
+    />
+  </div>
+
+  <div className="input-container">
+    <label htmlFor="email" className={classes.label}>
+      E-mail
+    </label>
+    <input
+      required
+      placeholder="Insira seu e-mail"
+      type="email"
+      name="Email"
+      id="email"
+      className={`form-input ${classes.input}`}
+    />
+  </div>
+
+  <div className="input-container">
+    <label htmlFor="terms" className={classes.label}>
+      Termos de Conduta
+    </label>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+      <input
+        type="checkbox"
+        required
+        name="AcceptedTerms"
+        id="terms"
+        style={{ width: '18px', height: '18px' }}
+      />
+      <label htmlFor="terms" style={{ color: theme.tertiary, fontSize: '0.9rem' }}>
+        Declaro que li e aceito os <a href="/termos" target="_blank" rel="noopener noreferrer" style={{ color: theme.primary, textDecoration: 'underline' }}>termos de conduta</a>.
+      </label>
+    </div>
+  </div>
+
+  <div className="thankyou_message" style={{ display: 'none' }}>
+    <p>Obrigada por se inscrever! Em breve entraremos em contato.</p>
+  </div>
+
+  <div className="submit-btn">
+    <button type="submit" className={classes.submitBtn}>
+      <p>{!success ? 'Quero ser membro' : 'Enviado'}</p>
+      <div className="submit-icon">
+        <AiOutlineSend
+          className="send-icon"
+          style={{
+            animation: !success ? 'initial' : 'fly 0.8s linear both',
+            position: success ? 'absolute' : 'initial',
+          }}
+        />
+        <AiOutlineCheckCircle
+          className="success-icon"
+          style={{
+            display: !success ? 'none' : 'inline-flex',
+            opacity: !success ? '0' : '1',
+          }}
+        />
+      </div>
+    </button>
+  </div>
+</form>
                     <div className='contacts-details'>
                         <a
                             href={`mailto:${contactsData.email}`}
