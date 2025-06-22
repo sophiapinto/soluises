@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { FaInstagram } from 'react-icons/fa';
 import { FiAtSign } from 'react-icons/fi';
@@ -9,42 +9,9 @@ import { contactsData } from '../../data/contactsData';
 import './Contacts.css';
 
 function Contacts() {
-    const [success, setSuccess] = useState(false);
     const { theme } = useContext(ThemeContext);
 
     const useStyles = makeStyles(() => ({
-        input: {
-            border: `4px solid ${theme.primary80}`,
-            backgroundColor: `${theme.secondary}`,
-            color: `${theme.tertiary}`,
-            fontFamily: 'var(--primaryFont)',
-            fontWeight: 500,
-            transition: 'border 0.2s ease-in-out',
-            '&:focus': {
-                border: `4px solid ${theme.primary600}`,
-            },
-        },
-        message: {
-            border: `4px solid ${theme.primary80}`,
-            backgroundColor: `${theme.secondary}`,
-            color: `${theme.tertiary}`,
-            fontFamily: 'var(--primaryFont)',
-            fontWeight: 500,
-            transition: 'border 0.2s ease-in-out',
-            '&:focus': {
-                border: `4px solid ${theme.primary600}`,
-            },
-        },
-        label: {
-            backgroundColor: `${theme.secondary}`,
-            color: `${theme.primary}`,
-            fontFamily: 'var(--primaryFont)',
-            fontWeight: 600,
-            fontSize: '0.9rem',
-            padding: '0 5px',
-            transform: 'translate(25px,50%)',
-            display: 'inline-flex',
-        },
         detailsIcon: {
             backgroundColor: '#D63826',
             color: '#FFFFFF',
@@ -61,99 +28,10 @@ function Contacts() {
                 transform: 'scale(1.1)',
                 backgroundColor: theme.tertiary,
             },
-        },
-        submitBtn: {
-            backgroundColor: theme.primary,
-            color: theme.secondary,
-            transition: '250ms ease-in-out',
-            '&:hover': {
-                transform: 'scale(1.08)',
-                backgroundColor: theme.tertiary,
-            },
-        },
+        }
     }));
 
     const classes = useStyles();
-
-    // ========= FUNÇÕES DE ENVIO =========
-
-    function getFormData(form) {
-        const elements = form.elements;
-        let honeypot;
-
-        const fields = Object.keys(elements).filter((k) => {
-            if (elements[k].name === "honeypot") {
-                honeypot = elements[k].value;
-                return false;
-            }
-            return true;
-        }).map((k) => {
-            if (elements[k].name !== undefined) return elements[k].name;
-            else if (elements[k].length > 0) return elements[k].item(0).name;
-        }).filter((item, pos, self) => self.indexOf(item) === pos && item);
-
-        const formData = {};
-        fields.forEach((name) => {
-            const element = elements[name];
-            formData[name] = element.value;
-
-            if (element.length) {
-                const data = [];
-                for (let i = 0; i < element.length; i++) {
-                    const item = element.item(i);
-                    if (item.checked || item.selected) data.push(item.value);
-                }
-                formData[name] = data.join(', ');
-            }
-        });
-
-        formData.formDataNameOrder = JSON.stringify(fields);
-        formData.formGoogleSheetName = form.dataset.sheet || "responses";
-        formData.formGoogleSendEmail = form.dataset.email || "";
-
-        return { data: formData, honeypot };
-    }
-
-    function handleFormSubmit(event) {
-        event.preventDefault();
-        const form = event.target;
-        const formData = getFormData(form);
-        const data = formData.data;
-
-        if (formData.honeypot) return false;
-
-        disableAllButtons(form);
-
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', form.action);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                form.reset();
-                const thankYouMessage = form.querySelector(".thankyou_message");
-                if (thankYouMessage) thankYouMessage.style.display = "block";
-                setSuccess(true);
-            }
-        };
-        const encoded = Object.keys(data)
-            .map((k) => encodeURIComponent(k) + "=" + encodeURIComponent(data[k]))
-            .join('&');
-        xhr.send(encoded);
-    }
-
-    function disableAllButtons(form) {
-        const buttons = form.querySelectorAll("button");
-        buttons.forEach((btn) => btn.disabled = true);
-    }
-
-    useEffect(() => {
-        const forms = document.querySelectorAll("form.contact__form");
-        forms.forEach((form) => {
-            form.addEventListener("submit", handleFormSubmit, false);
-        });
-    }, []);
-
-    // ========== JSX ==========
 
     return (
         <div className='contacts' id='contacts' style={{ backgroundColor: theme.secondary }}>
