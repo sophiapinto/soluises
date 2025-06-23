@@ -100,7 +100,7 @@
 }
 
 .education-image {
-  border-radius: 20px;
+  /*border-radius: 20px;*/
   padding: 1rem;
   flex: 0.35;
   margin-top: 1rem;
@@ -109,10 +109,11 @@
 }
 
 .education-image > img {
+  padding-top: 40px;
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 20px;
+  /*border-radius: 20px;*/
 }
 
 /* Responsivo */
