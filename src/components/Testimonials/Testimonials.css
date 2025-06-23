@@ -122,8 +122,8 @@
 
 .review--img{
     margin: 0 auto;
-    width: 100px;
-    height: 100px;
+    /*width: 150px;*/
+    /*height: 150px;*/
     border-radius: 50%;
     z-index: 3;
     transform: translateY(50%);
@@ -135,7 +135,7 @@
 
 }
 .review--img img{
-    width: 90px;
+    width: 130px;
 }
 
 .review--content{
@@ -145,7 +145,7 @@
     border-radius: 200px;
 
     box-sizing: border-box;
-    padding: 30px 40px;
+    padding:10px 10px;
     padding-top: 60px;
 
     display: flex;

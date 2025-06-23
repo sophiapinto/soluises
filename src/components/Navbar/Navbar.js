@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 import Fade from 'react-reveal/Fade';
 import { IoMenuSharp, IoHomeSharp } from 'react-icons/io5';
-import { BsFillGearFill } from 'react-icons/bs';
+import { GrProjects } from "react-icons/gr";
+//import { BsFillGearFill } from 'react-icons/bs';
 import { MdPhone } from 'react-icons/md';
+import { FaBook } from "react-icons/fa";
 import { FaUser } from 'react-icons/fa';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -130,7 +132,7 @@ function Navbar() {
                             <NavLink to="/" smooth={true} duration={2000}>
                                 <div className={classes.drawerItem}>
                                     <IoHomeSharp className={classes.drawerIcon} />
-                                    <span className={classes.drawerLinks}>Home</span>
+                                    <span className={classes.drawerLinks}>Inicio</span>
                                 </div>
                             </NavLink>
                         </Fade>
@@ -139,16 +141,25 @@ function Navbar() {
                             <NavLink to="/#about" smooth={true} duration={2000}>
                                 <div className={classes.drawerItem}>
                                     <FaUser className={classes.drawerIcon} />
-                                    <span className={classes.drawerLinks}>Sobre</span>
+                                    <span className={classes.drawerLinks}>SoLuises</span>
                                 </div>
                             </NavLink>
                         </Fade>
 
                         <Fade left>
-                            <NavLink to="/#services" smooth={true} duration={2000}>
+                            <NavLink to="/#blog" smooth={true} duration={2000}> {/*Ações Soluises*/}
                                 <div className={classes.drawerItem}>
-                                    <BsFillGearFill className={classes.drawerIcon} />
-                                    <span className={classes.drawerLinks}>Serviços</span>
+                                    <GrProjects className={classes.drawerIcon} />
+                                    <span className={classes.drawerLinks}>Projetos</span>
+                                </div>
+                            </NavLink>
+                        </Fade>
+
+                        <Fade left>
+                            <NavLink to="/#projects" smooth={true} duration={2000}> {/*Reports*/}
+                                <div className={classes.drawerItem}>
+                                    <FaBook className={classes.drawerIcon} />
+                                    <span className={classes.drawerLinks}>Reports</span>
                                 </div>
                             </NavLink>
                         </Fade>
