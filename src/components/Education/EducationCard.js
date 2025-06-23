@@ -24,7 +24,9 @@ function EducationCard({ id, institution, course }) {
         <Fade bottom>
             <div key={id} className={`education-card ${classes.educationCard}`}>
                 <div className="education-details">
-                    <h4>{institution}</h4>
+                    <h1>{institution}</h1>
+                </div>
+                <div className="education-details">
                     <h5>{course}</h5>
                 </div>
             </div>
