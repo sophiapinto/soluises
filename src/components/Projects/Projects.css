@@ -66,11 +66,11 @@
 .projects--viewAll a button {
     outline: none;
     border: none;
-    width: 150px;
-    height: 48px;
+    width: 200px;
+    height: 50px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     text-transform: inherit;
     border-radius: 45px;
     font-size: 1.05rem;
