@@ -37,6 +37,8 @@
 .queroser-form {
   display: flex;
   flex-direction: column;
+ 
+  
   /*gap: 1.2rem;*/
 }
 
@@ -96,8 +98,8 @@
   accent-color: var(--red);
 }
 
-.checkbox-group a {
-  color: var(--yellow);
+.checkbox-group span a {
+  color: var(--red);
   text-decoration: underline;
 }
 

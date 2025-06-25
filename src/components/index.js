@@ -16,4 +16,4 @@ export { default as SingleService } from './Services/SingleService/SingleService
 
 export { default as BackToTop } from'./BackToTop/BackToTop'
 
-export { default as QueroSerMembro } from './QueroSerMembro/QueroSerMembro'
+//export { default as QueroSerMembro } from './QueroSerMembro/QueroSerMembro'

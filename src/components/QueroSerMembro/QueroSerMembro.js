@@ -2,6 +2,9 @@ import React, { useContext, useState } from 'react';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { AiOutlineSend, AiOutlineCheckCircle } from 'react-icons/ai';
 import './QueroSerMembro.css';
+import Modal from '../Modal/Modal';
+
+
 
 function getFormData(form) {
   const elements = form.elements;
@@ -82,6 +85,7 @@ function disableAllButtons(form) {
 function QueroSerMembro() {
   const { theme } = useContext(ThemeContext);
   const [success, setSuccess] = useState(false);
+  const [openModal, setOpenModal] = useState(false)
 
   return (
     <section className="queroser-container" id="queroser">
@@ -95,7 +99,7 @@ function QueroSerMembro() {
         onSubmit={(e) => handleFormSubmit(e, setSuccess)}
       >
         <div className="input-container">
-          <label htmlFor="name">Nome completo</label>
+          <label htmlFor="name">Nome</label>
           <input
             required
             placeholder="Digite seu nome"
@@ -147,7 +151,7 @@ function QueroSerMembro() {
         </div>
 
         <div className="submit-btn">
-          <button type="submit">
+          <button type="submit" onClick={() => setOpenModal(true)}>
             <p>{!success ? 'Enviar' : 'Enviado'}</p>
             {!success ? (
               <AiOutlineSend className="send-icon" />
@@ -157,6 +161,79 @@ function QueroSerMembro() {
           </button>
         </div>
       </form>
+      <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)} title={'Quero ser Membro'}>
+          <form
+        method="POST"
+        data-email="sarahsophiapinto@gmail.com"
+        action="https://script.google.com/macros/s/AKfycbzuqPogDl8RMvYcp1lYY78bXky6jO75Ei0Btn1NxPjC3JAcpLD5VxVop8pdadtBm1YAmA/exec"
+        className="queroser-form"
+        onSubmit={(e) => handleFormSubmit(e, setSuccess)}
+      >
+        <div className="input-container">
+          <label htmlFor="name">Nome</label>
+          <input
+            required
+            placeholder="Digite seu nome"
+            type="text"
+            name="Name"
+            id="name"
+          />
+        </div>
+
+        <div className="input-container">
+          <label htmlFor="phone">Telefone</label>
+          <input
+            required
+            placeholder="(00) 00000-0000"
+            type="tel"
+            name="Phone"
+            id="phone"
+          />
+        </div>
+
+        <div className="input-container">
+          <label htmlFor="email">E-mail</label>
+          <input
+            required
+            placeholder="Digite seu e-mail"
+            type="email"
+            name="Email"
+            id="email"
+          />
+        </div>
+
+        <div className="input-container checkbox-group">
+          <input
+            type="checkbox"
+            required
+            name="AcceptedTerms"
+            id="terms"
+          />
+          <span>
+            Declaro que li e aceito os{' '}
+            <a href="/termos" target="_blank" rel="noopener noreferrer">
+              termos de conduta
+            </a>
+          </span>
+        </div>
+
+        <div className="thankyou_message" style={{ display: 'none' }}>
+          <p>Obrigada por se inscrever! Em breve entraremos em contato.</p>
+        </div>
+
+        <div className="submit-btn">
+          <button type="submit" onClick={() => setOpenModal(true)}>
+            <p>{!success ? 'Enviar' : 'Enviado'}</p>
+            {!success ? (
+              <AiOutlineSend className="send-icon" />
+            ) : (
+              <AiOutlineCheckCircle className="success-icon" />
+            )}
+          </button>
+        </div>
+      </form>
+          
+      </Modal>
     </section>
   );
 }

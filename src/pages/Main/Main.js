@@ -11,7 +11,7 @@ function Main() {
             <Skills /> {/*Galeria*/}
             <Blog /> {/*AÇÕES*/}
             <Projects /> {/*REPORTS*/}
-            <QueroSerMembro  />
+           {/* <QueroSerMembro  />*/}
             <Contacts />
             <Footer />
         </div>

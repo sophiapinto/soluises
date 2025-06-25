@@ -12,7 +12,7 @@ export const projectsData = [
         projectDesc: 'Edição Nº7 com ISBN: 978-65-00-38759-9 ',
         tags: ['Comunidade' , 'Desenvolvimento'],
         code: 'https://drive.google.com/file/d/1-kaR5kK_r7Q8PfcbQ4aFUa4dW8Tmer78/view?usp=sharing',
-        demo: 'https://drive.google.com/file/d/1xMXeZApjrYGzWDEBjCACLkhDBUifG7nS/view?pli=1',
+        demo: 'download',
         image: one
     },
     {

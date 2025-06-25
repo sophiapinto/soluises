@@ -29,6 +29,7 @@ function App() {
         </Switch>
       </Router>
       <BackToTop />
+      
     </div>
   );
 }

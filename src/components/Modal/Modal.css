@@ -1,0 +1,112 @@
+.modal-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+  
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.modal-body {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: var(--primaryFont);
+}
+.modal-body h2{
+  text-align: center;
+  
+}
+
+.modal-footer {
+  text-align: right;
+}
+.action-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+  background-color: #0056b3;
+}
+.modal-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-style{
+   position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  max-width: 90%;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  color: black;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+
+@media (min-width: 992px) and (max-width: 1380px) {
+    .modal-style {
+        width: 50%;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .modal-style {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+ .modal-style {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+   .modal-style {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+  .modal-style {
+        width: 90%;
+    }
+}
+  
+@media only screen and (min-device-width: 320px) and (max-device-width: 
+  480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
+    .modal-style {
+        width: 90%;
+    }
+}
+
+
+@media only screen and (device-width: 768px) {
+  .modal-style {
+        width: 90%;
+    }
+}
