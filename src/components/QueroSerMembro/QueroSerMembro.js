@@ -100,7 +100,7 @@ return (
         onSubmit={(e) => handleFormSubmit(e, setSuccess)}
       >
         <div className="input-container">
-          <label htmlFor="name">Nome</label>
+          <label for="name">Nome</label>
           <input
             required
             placeholder="Digite seu nome"
@@ -122,7 +122,7 @@ return (
         </div>
 
         <div className="input-container">
-          <label htmlFor="email">E-mail</label>
+          <label for="email">E-mail</label>
           <input
             required
             placeholder="Digite seu e-mail"
