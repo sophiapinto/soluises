@@ -86,11 +86,12 @@ function QueroSerMembro() {
   const [success, setSuccess] = useState(false);
   const [openModal, setOpenModal] = useState(false)
 
-  return (
+return (
     <section className="queroser-container" id="queroser">
       <h1>Quero ser membro</h1>
 
-      <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)} title={'Quero ser Membro'}>
+
+     <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)} title={'Quero ser Membro'}>
           <form
         method="POST"
         data-email="sarahsophiapinto@gmail.com"
@@ -99,7 +100,7 @@ function QueroSerMembro() {
         onSubmit={(e) => handleFormSubmit(e, setSuccess)}
       >
         <div className="input-container">
-          <label for="name">Nome</label>
+          <label htmlFor="name">Nome</label>
           <input
             required
             placeholder="Digite seu nome"
@@ -110,7 +111,7 @@ function QueroSerMembro() {
         </div>
 
         <div className="input-container">
-          <label for="phone">Telefone</label>
+          <label htmlFor="phone">Telefone</label>
           <input
             required
             placeholder="(00) 00000-0000"
@@ -121,7 +122,7 @@ function QueroSerMembro() {
         </div>
 
         <div className="input-container">
-          <label for="email">E-mail</label>
+          <label htmlFor="email">E-mail</label>
           <input
             required
             placeholder="Digite seu e-mail"
