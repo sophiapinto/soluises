@@ -11,6 +11,7 @@ import { AiOutlineSend, AiOutlineCheckCircle } from 'react-icons/ai';
 
 function Landing() {
     const { theme, drawerOpen } = useContext(ThemeContext);
+    const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
     const [openModal, setOpenModal] = useState(false)
     
@@ -85,12 +86,17 @@ function Landing() {
 
     function handleFormSubmit(event, setSuccess) {
     event.preventDefault();
+    setLoading(true);
+
     const form = event.target;
     const formData = getFormData(form);
     const data = formData.data;
 
-    if (formData.honeypot) return false;
+    if (formData.honeypot) {
+      setLoading(false);
+      return false;
 
+    }
     disableAllButtons(form);
 
     const xhr = new XMLHttpRequest();
@@ -99,10 +105,12 @@ function Landing() {
 
     xhr.onreadystatechange = () => {
         if (xhr.readyState === 4 && xhr.status === 200) {
+        setLoading(false);
         form.reset();
         const thankYouMessage = form.querySelector('.thankyou_message');
         if (thankYouMessage) thankYouMessage.style.display = 'block';
         setSuccess(true);
+        
         }
     };
 
@@ -169,77 +177,87 @@ function Landing() {
             </div>
 
             {/* ----- Modal Form ----*/}
-            <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)} title={'Quero ser Membro'}>
+            <Modal isOpen={openModal} setModalOpen={(value) => {  if (!loading) setOpenModal(value); }} title={  success?  '' : 'Quero ser Membro'} isLoading={loading}>
+                 {!success ? (
                       <form
-                    method="POST"
-                    data-email="sarahsophiapinto@gmail.com"
-                    action="https://script.google.com/macros/s/AKfycbzuqPogDl8RMvYcp1lYY78bXky6jO75Ei0Btn1NxPjC3JAcpLD5VxVop8pdadtBm1YAmA/exec"
-                    className="queroser-form"
-                    onSubmit={(e) => handleFormSubmit(e, setSuccess)}
-                  >
-                    <div className="input-container">
-                      <label htmlFor="name">Nome</label>
-                      <input
-                        required
-                        placeholder="Digite seu nome"
-                        type="text"
-                        name="Name"
-                        id="name"
-                      />
-                    </div>
-            
-                    <div className="input-container">
-                      <label htmlFor="phone">Telefone</label>
-                      <input
-                        required
-                        placeholder="(00) 00000-0000"
-                        type="tel"
-                        name="Phone"
-                        id="phone"
-                      />
-                    </div>
-            
-                    <div className="input-container">
-                      <label htmlFor="email">E-mail</label>
-                      <input
-                        required
-                        placeholder="Digite seu e-mail"
-                        type="email"
-                        name="Email"
-                        id="email"
-                      />
-                    </div>
-            
-                    <div className="input-container checkbox-group">
-                      <input
-                        type="checkbox"
-                        required
-                        name="AcceptedTerms"
-                        id="terms"
-                      />
-                      <span>
-                        Declaro que li e aceito os{' '}
-                        <a href="https://drive.google.com/file/d/16HaHKI2rYa_fepWI3aQqAzwskbLdVaI3/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                          termos de conduta
-                        </a>
-                      </span>
-                    </div>
-            
-                    <div className="thankyou_message" style={{ display: 'none' }}>
-                      <p>Obrigada por se inscrever! Em breve entraremos em contato.</p>
-                    </div>
-            
-                    <div className="submit-btn">
-                      <button type="submit" onClick={() => setOpenModal(true)}>
-                        <p>{!success ? 'Enviar' : 'Enviado'}</p>
-                        {!success ? (
-                          <AiOutlineSend className="send-icon" />
-                        ) : (
-                          <AiOutlineCheckCircle className="success-icon" />
-                        )}
-                      </button>
-                    </div>
-                  </form>
+                        method="POST"
+                        data-email="comunidadesoluises@gmail.com"
+                        action="https://script.google.com/macros/s/AKfycbyIaPzRGHAxnyvw7ZuvKWyHa6_B1Kl9Kj5CvoM1TgIxLHKpoREN2X5F_ZJjhmPF6c8m/exec"
+                        className="queroser-form"
+                        onSubmit={(e) => handleFormSubmit(e, setSuccess)}
+                      >
+                        <div className="input-container">
+                          <label htmlFor="name">Nome</label>
+                          <input
+                            required
+                            placeholder="Digite seu nome"
+                            type="text"
+                            name="Nome"
+                            id="name"
+                          />
+                        </div>
+                
+                        <div className="input-container">
+                          <label htmlFor="phone">Telefone</label>
+                          <input
+                            required
+                            placeholder="(00) 00000-0000"
+                            type="tel"
+                            name="Telefone"
+                            id="phone"
+                          />
+                        </div>
+                
+                        <div className="input-container">
+                          <label htmlFor="email">E-mail</label>
+                          <input
+                            required
+                            placeholder="Digite seu e-mail"
+                            type="email"
+                            name="Email"
+                            id="email"
+                          />
+                        </div>
+                
+                        <div className="input-container checkbox-group">
+                          <input
+                            type="checkbox"
+                            required
+                            name="Aceitou os termos"
+                            id="terms"
+                          />
+                          <span>
+                            Declaro que li e aceito os{' '}
+                            <a href="https://drive.google.com/file/d/16HaHKI2rYa_fepWI3aQqAzwskbLdVaI3/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                              termos de conduta
+                            </a>
+                          </span>
+                        </div>
+                
+                        
+                
+                        <div className="submit-btn">
+                          <Button type="submit" className={classes.resumeBtn} disabled={loading}>
+                            {loading ? 'Enviando...' : 'Enviar'}
+                          </Button>
+                        </div>
+                      </form>) : 
+                      (
+                      <div className='queroser-grupo'>
+                          
+                            <p style={{ marginBottom: '1rem' }}>Entre no Grupo Agora!</p>
+                              <Button
+                                href="https://chat.whatsapp.com/Irspbf0iNPyEEX8JFuplfj"
+                                className={classes.resumeBtn}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={() => setOpenModal(false)}
+                              >
+                                Entrar no Grupo
+                              </Button>
+                        
+                      </div>
+                     )}
                       
                 </Modal>
         </div>
