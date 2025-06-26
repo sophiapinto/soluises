@@ -5,7 +5,6 @@ import './QueroSerMembro.css';
 import Modal from '../Modal/Modal';
 
 
-
 function getFormData(form) {
   const elements = form.elements;
   let honeypot;
@@ -91,76 +90,6 @@ function QueroSerMembro() {
     <section className="queroser-container" id="queroser">
       <h1>Quero ser membro</h1>
 
-      <form
-        method="POST"
-        data-email="sarahsophiapinto@gmail.com"
-        action="https://script.google.com/macros/s/AKfycbzuqPogDl8RMvYcp1lYY78bXky6jO75Ei0Btn1NxPjC3JAcpLD5VxVop8pdadtBm1YAmA/exec"
-        className="queroser-form"
-        onSubmit={(e) => handleFormSubmit(e, setSuccess)}
-      >
-        <div className="input-container">
-          <label htmlFor="name">Nome</label>
-          <input
-            required
-            placeholder="Digite seu nome"
-            type="text"
-            name="Name"
-            id="name"
-          />
-        </div>
-
-        <div className="input-container">
-          <label htmlFor="phone">Telefone</label>
-          <input
-            required
-            placeholder="(00) 00000-0000"
-            type="tel"
-            name="Phone"
-            id="phone"
-          />
-        </div>
-
-        <div className="input-container">
-          <label htmlFor="email">E-mail</label>
-          <input
-            required
-            placeholder="Digite seu e-mail"
-            type="email"
-            name="Email"
-            id="email"
-          />
-        </div>
-
-        <div className="input-container checkbox-group">
-          <input
-            type="checkbox"
-            required
-            name="AcceptedTerms"
-            id="terms"
-          />
-          <label htmlFor="terms">
-            Declaro que li e aceito os{' '}
-            <a href="/termos" target="_blank" rel="noopener noreferrer">
-              termos de conduta
-            </a>
-          </label>
-        </div>
-
-        <div className="thankyou_message" style={{ display: 'none' }}>
-          <p>Obrigada por se inscrever! Em breve entraremos em contato.</p>
-        </div>
-
-        <div className="submit-btn">
-          <button type="submit" onClick={() => setOpenModal(true)}>
-            <p>{!success ? 'Enviar' : 'Enviado'}</p>
-            {!success ? (
-              <AiOutlineSend className="send-icon" />
-            ) : (
-              <AiOutlineCheckCircle className="success-icon" />
-            )}
-          </button>
-        </div>
-      </form>
       <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)} title={'Quero ser Membro'}>
           <form
         method="POST"
@@ -170,7 +99,7 @@ function QueroSerMembro() {
         onSubmit={(e) => handleFormSubmit(e, setSuccess)}
       >
         <div className="input-container">
-          <label htmlFor="name">Nome</label>
+          <label for="name">Nome</label>
           <input
             required
             placeholder="Digite seu nome"
@@ -181,7 +110,7 @@ function QueroSerMembro() {
         </div>
 
         <div className="input-container">
-          <label htmlFor="phone">Telefone</label>
+          <label for="phone">Telefone</label>
           <input
             required
             placeholder="(00) 00000-0000"
@@ -192,7 +121,7 @@ function QueroSerMembro() {
         </div>
 
         <div className="input-container">
-          <label htmlFor="email">E-mail</label>
+          <label for="email">E-mail</label>
           <input
             required
             placeholder="Digite seu e-mail"
