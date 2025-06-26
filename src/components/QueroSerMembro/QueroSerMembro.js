@@ -165,7 +165,7 @@ function QueroSerMembro() {
           <form
         method="POST"
         data-email="sarahsophiapinto@gmail.com"
-        action="https://script.google.com/macros/s/AKfycbzuqPogDl8RMvYcp1lYY78bXky6jO75Ei0Btn1NxPjC3JAcpLD5VxVop8pdadtBm1YAmA/exec"
+        action="https://script.google.com/macros/s/AKfycbzdvf1Xbl5bRXm_zdlN_OwhmgvOzcHCReyPjxEiD-8zU7jzxndfMWwMgng_sZJ6D2xL/exec"
         className="queroser-form"
         onSubmit={(e) => handleFormSubmit(e, setSuccess)}
       >
