@@ -4,6 +4,7 @@ import three from '../assets/report/report-09.jpeg';
 import four from '../assets/report/report-10.jpeg';
 import five from '../assets/report/report-11.jpeg';
 import six from '../assets/report/report-12.jpeg';
+import seven from '../assets/report/report-13.jpeg';
 
 export const projectsData = [
     {
@@ -11,7 +12,7 @@ export const projectsData = [
         projectName: 'Report 07',
         projectDesc: 'Edição Nº7 com ISBN: 978-65-00-38759-9 ',
         tags: ['Comunidade' , 'Desenvolvimento'],
-        code: 'https://drive.google.com/file/d/1-kaR5kK_r7Q8PfcbQ4aFUa4dW8Tmer78/view?usp=sharing',
+        code: 'https://drive.google.com/file/d/1xMXeZApjrYGzWDEBjCACLkhDBUifG7nS/view',
         demo: 'download',
         image: one
     },
@@ -20,8 +21,8 @@ export const projectsData = [
         projectName: 'Report 08',
         projectDesc: 'Edição Nº8 com ISBN: 978-65-00-45294-5',
         tags: ['Gestão de Negocios, Economia'],
-        code: 'https://drive.google.com/file/d/1-kaR5kK_r7Q8PfcbQ4aFUa4dW8Tmer78/view?usp=sharing',
-        demo: 'https://drive.google.com/file/d/1Q8hxtGiy2Iv5JilvK0gLLhH26qzzZO_R/view?usp=sharing',
+        code: 'https://drive.google.com/file/d/1Q8hxtGiy2Iv5JilvK0gLLhH26qzzZO_R/view',
+        demo: 'download',
         image: two
     },
     {
@@ -29,8 +30,8 @@ export const projectsData = [
         projectName: 'Report 09',
         projectDesc: 'Edição Nº9 com ISBN: 978-65-00-50155-1',
         tags: ['Empreendedorismo, Startups'],
-        code: 'https://drive.google.com/file/d/1-kaR5kK_r7Q8PfcbQ4aFUa4dW8Tmer78/view?usp=sharing',
-        demo: 'https://drive.google.com/file/d/19uAzp15LjjBz96a3fpztX9D2-iVa3uCd/view?usp=sharing',
+        code: 'https://drive.google.com/file/d/19uAzp15LjjBz96a3fpztX9D2-iVa3uCd/view',
+        demo: 'download',
         image: three
     },
     {
@@ -38,8 +39,8 @@ export const projectsData = [
         projectName: 'Report 10',
         projectDesc: 'Edição Nº10 com ISBN: 978-65-00-55206-5',
         tags: ['Inovação', 'Economia'],
-        code: 'https://drive.google.com/file/d/1-kaR5kK_r7Q8PfcbQ4aFUa4dW8Tmer78/view?usp=sharing',
-        demo: 'https://sarahsophiapinto-d04de.chat.blip.ai/?appKey=cG91cGFjaGF0Ojg1MjRiMDVmLTI3MzMtNDJmMS1hZDI0LWIyMzNjZGY2NjU5Zg==',
+        code: 'https://drive.google.com/file/d/1ma-gM6VL7vtobHQ-5_d1-sMyPkiu3foh/view',
+        demo: 'download',
         image: four
     },
     {
@@ -47,8 +48,8 @@ export const projectsData = [
         projectName: 'Report 11',
         projectDesc: 'Edição Nº11 ',
         tags: ['Inovação, Negocios'],
-        code: 'https://drive.google.com/file/d/1-kaR5kK_r7Q8PfcbQ4aFUa4dW8Tmer78/view?usp=sharing',
-        demo: 'https://drive.google.com/file/d/1-kaR5kK_r7Q8PfcbQ4aFUa4dW8Tmer78/view?usp=sharing',
+        code: 'https://drive.google.com/file/d/1-kaR5kK_r7Q8PfcbQ4aFUa4dW8Tmer78/view',
+        demo: 'download',
         image: five
     },
     {
@@ -56,9 +57,18 @@ export const projectsData = [
         projectName: 'Report 12 ',
         projectDesc: 'Edição Nº12 com ISBN 978-65-85461-02-3',
         tags: ['Inovação', 'Startups'],
-        code: 'https://drive.google.com/file/d/1UnRpBUpS_kvWNreQg8K6Hhtis2K8Y-tT/view?usp=sharing',
-        demo: 'https://drive.google.com/file/d/1UnRpBUpS_kvWNreQg8K6Hhtis2K8Y-tT/view?usp=sharing',
+        code: 'https://drive.google.com/file/d/1UnRpBUpS_kvWNreQg8K6Hhtis2K8Y-tT/view',
+        demo: 'download',
         image: six
+    },
+    {
+        id: 7,
+        projectName: 'Report 13 ',
+        projectDesc: 'Edição Nº13 com ISBN 978-65-5815-022-0',
+        tags: ['Inovação', 'Startups'],
+        code: 'https://drive.google.com/file/d/11oRmxa-GPU-diwx2noC-vYzNHMhJSKws/view',
+        demo: 'download',
+        image: seven
     },
     ]
 

@@ -1,14 +1,16 @@
-import React from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
 import {FaDownload , FaEye  } from 'react-icons/fa';
 import Fade from 'react-reveal/Fade';
 
+
 import placeholder from '../../../assets/png/placeholder.png';
 import './SingleProject.css';
 
-function SingleProject({ id, name, desc, tags, image, code, theme }) {
+function SingleProject({ id, name, desc, tags, image, code, theme, demo, onDemoClick  }) {
     const useStyles = makeStyles((t) => ({
         iconBtn: {
+            all: 'unset',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -30,11 +32,28 @@ function SingleProject({ id, name, desc, tags, image, code, theme }) {
             transition: 'all 0.2s',
             '&:hover': {},
         },
+
+        downloadButton: {
+            backgroundColor: '#D63826',
+            color: '#FFFFFF',
+            '&:hover': {
+            backgroundColor: 'rgb(30, 34, 48)',
+            color: '#FFFFFF',
+        }},
     }));
 
     const classes = useStyles();
+    
 
+     // Função para abrir modal com a URL do demo
+    const handleDemoClick = (e) => {
+        e.preventDefault();
+        if (onDemoClick) {
+            onDemoClick(demo); // sempre abre modal com demo
+    }
+};
     return (
+        <>
           <Fade bottom>
             <div
                 key={id}
@@ -45,26 +64,16 @@ function SingleProject({ id, name, desc, tags, image, code, theme }) {
                   
                     <img src={image ? image : placeholder} alt={name} />
                     <div className='project--showcaseBtn'>
-                        <a
-                           
-                            target='_blank'
-                            download='ebook'
-                            rel='noreferrer'
+                        
+                         <button 
+                            onClick={handleDemoClick}
                             className={classes.iconBtn}
-                            aria-labelledby={`${name
-                                .replace(' ', '-')
-                                .toLowerCase()} ${name
-                                .replace(' ', '-')
-                                .toLowerCase()}-demo`}
-                        >
-                            <FaDownload
-                                id={`${name
-                                    .replace(' ', '-')
-                                    .toLowerCase()}-demo`}
-                                className={classes.icon}
-                                aria-label='Demo'
-                            />
-                        </a>
+                            aria-label="Demo"
+                            title="Ver demo"
+                            >
+                            <FaDownload className={classes.icon} />
+                        </button>              
+                        
                         <a
                             href={code}
                             target='_blank'
@@ -108,6 +117,9 @@ function SingleProject({ id, name, desc, tags, image, code, theme }) {
                 </div>
             </div>
         </Fade>
+        
+        </>
+        
     );
 }
 
