@@ -183,7 +183,7 @@ function Projects() {
                     <div className="projects--header">
                         <h1 style={{color: '#FFFFFF'}}>Reports</h1>
                         <p style={{color: '#FFFFFF', position:'relative', alignItems:'center', fontSize:'20px'}}>
-                            O Report Soluises é o retrato anual da inovação no Maranhão. Com dados, histórias e tendências, ele mostra como o ecossistema tem crescido e se conectado. É uma leitura essencial para quem constroi o futuro da inovação!
+                            O Report SOLuíses é o retrato anual da inovação no Maranhão. Com dados, histórias e tendências, ele mostra como o ecossistema tem crescido e se conectado. É uma leitura essencial para quem constroi o futuro da inovação!
                         </p>
                     </div>
                     <div className="projects--body">

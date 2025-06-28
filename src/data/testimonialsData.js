@@ -17,13 +17,13 @@ export const testimonialsData = [
         id: 1,
         name: 'Fredson Costa',
         title: 'Membro do Squad de tecnologia',
-        text: " Estar na comunidade Soluise é viver a inovação na prática. Aqui, ideias ganham forma com apoio colaborativo e conexões estratégicas.",
+        text: " Estar na comunidade SOLuíses é viver a inovação na prática. Aqui, ideias ganham forma com apoio colaborativo e conexões estratégicas.",
         image: profile01
     },
     {
         id: 2,
         name: 'Ellen Regine',
-        title: 'Membra da Comunidade Soluises',
+        title: 'Membra da Comunidade SOLuíses',
         text: " A convivência com profissionais diversos, engajados em transformar ideias em impacto, fortalece minha atuação com foco em experiência do usuário",
         image: profile02
     },

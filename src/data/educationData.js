@@ -4,7 +4,7 @@ export const educationData = [
  {
         id: 1,
         institution: '+370',
-        course: 'Membros ativos na comunidade Soluises',
+        course: 'Membros ativos na comunidade SOLuíses',
 
     },    {
         id: 2,

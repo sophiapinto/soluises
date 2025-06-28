@@ -24,12 +24,12 @@
 .education-description {
   width: 100%;
   flex: 0.65;
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-left: 7%;
+ /* margin-left: 7%;*/
 }
 
 .education-description > h1 {
@@ -45,7 +45,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  width: 90%;
+  width: 100%;
   height: 140px;
   padding: 1.5rem;
   border-radius: 20px;
@@ -55,7 +55,7 @@
 }
 
 .educard-img {
-  border-radius: 20px;
+  border-radius: 100px;
   width: 70px;
   height: 60px;
   display: flex;
@@ -102,6 +102,7 @@
 .education-image {
   /*border-radius: 20px;*/
   padding: 1rem;
+  padding-top: 35px;
   flex: 0.35;
   margin-top: 1rem;
   pointer-events: none;
@@ -113,7 +114,7 @@
   width: 100%;
   height: auto;
   object-fit: cover;
-  /*border-radius: 20px;*/
+  border-radius: 100px;
 }
 
 /* Responsivo */
