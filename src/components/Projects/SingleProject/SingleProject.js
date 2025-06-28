@@ -74,7 +74,7 @@ function SingleProject({ id, name, desc, tags, image, code, theme, demo, onDemoC
                             <FaDownload className={classes.icon} />
                         </button>              
                         
-                        <a
+                        {/*<a
                             href={code}
                             target='_blank'
                             rel='noreferrer'
@@ -92,7 +92,7 @@ function SingleProject({ id, name, desc, tags, image, code, theme, demo, onDemoC
                                 className={classes.icon}
                                 aria-label='Code'
                             />
-                        </a>
+                        </a>*/}
                     </div>
                 </div>
                 <p
