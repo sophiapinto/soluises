@@ -1,13 +1,12 @@
-import React, { useContext, useState} from 'react';
+import { useContext, useState} from 'react';
 import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-
-import './Landing.css';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { headerData } from '../../data/headerData';
 import Modal from '../Modal/Modal';
 import './FormsQueroserMembro.css';
-import { AiOutlineSend, AiOutlineCheckCircle } from 'react-icons/ai';
+import './Landing.css';
+
 
 function Landing() {
     const { theme, drawerOpen } = useContext(ThemeContext);
@@ -29,6 +28,7 @@ function Landing() {
             height: '50px',
             fontFamily: 'var(--primaryFont)',
             border: `3px solid #D63826`,
+            padding: '10px',
             transition: '100ms ease-out',
             '&:hover': {
                 backgroundColor: theme.tertiary,
@@ -39,10 +39,30 @@ function Landing() {
                 width: '200px',
             },
         },
+        groupBtn: {
+            color: '#ffffff',
+            backgroundColor: '#D63826',
+            borderRadius: '30px',
+            textTransform: 'inherit',
+            textDecoration: 'none',
+            width: '200px', // button princiapl vermelho antes era 150 px
+            fontSize: '1rem',
+            fontWeight: '500',
+            height: '50px',
+            fontFamily: 'var(--primaryFont)',
+            border: `3px solid #D63826`,
+            padding: '10px',
+            transition: '100ms ease-out',
+            '&:hover': {
+                backgroundColor: theme.tertiary,
+                color: theme.secondary,
+                border: `3px solid #3EA681`,
+            }
+          }
     }));
 
     
-    function getFormData(form) {
+  function getFormData(form) {
     const elements = form.elements;
     let honeypot;
 
@@ -182,7 +202,7 @@ function Landing() {
                       <form
                         method="POST"
                         data-email="comunidadesoluises@gmail.com"
-                        action="https://script.google.com/macros/s/AKfycbyIaPzRGHAxnyvw7ZuvKWyHa6_B1Kl9Kj5CvoM1TgIxLHKpoREN2X5F_ZJjhmPF6c8m/exec"
+                        action="https://script.google.com/macros/s/AKfycbySwXqqxDwBRDMXoIfcznZPmxuKkaxmSeTwU2-rkSPG2MTlw3S2PstoYl02NAmkZprp/exec"
                         className="queroser-form"
                         onSubmit={(e) => handleFormSubmit(e, setSuccess)}
                       >
@@ -233,9 +253,6 @@ function Landing() {
                             </a>
                           </span>
                         </div>
-                
-                        
-                
                         <div className="submit-btn">
                           <Button type="submit" className={classes.resumeBtn} disabled={loading}>
                             {loading ? 'Enviando...' : 'Enviar'}
@@ -246,16 +263,19 @@ function Landing() {
                       <div className='queroser-grupo'>
                           
                             <p style={{ marginBottom: '1rem' }}>Entre no Grupo Agora!</p>
-                              <Button
-                                href="https://chat.whatsapp.com/Irspbf0iNPyEEX8JFuplfj"
-                                className={classes.resumeBtn}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={() => setOpenModal(false)}
-                              >
-                                Entrar no Grupo
-                              </Button>
-                        
+                              <div className="submit-btn">
+                                  <Button
+                                  type='submit'
+                                  href="https://chat.whatsapp.com/Irspbf0iNPyEEX8JFuplfj"
+                                  className={classes.groupBtn}
+                                  
+                                  //target="_blank"
+                                  //rel="noopener noreferrer"
+                                  onClick={() => setOpenModal(false)}
+                                >
+                                  Entrar no Grupo
+                                </Button>
+                              </div>
                       </div>
                      )}
                       

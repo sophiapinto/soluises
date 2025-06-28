@@ -4,22 +4,133 @@ import { Grid } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import { AiOutlineHome } from "react-icons/ai";
-
+import Modal from '../../components/Modal/Modal';
 import './ProjectPage.css'
 import { SingleProject } from '../../components';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { projectsData } from '../../data/projectsData'
 import { headerData } from '../../data/headerData'
+import { Button } from '@material-ui/core';
 
 function ProjectPage() {
 
     const [search, setSearch] = useState('')
     const { theme } = useContext(ThemeContext);
+    const [openModal, setOpenModal] = useState(false);
+    const [modalContent, setModalContent] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
+    
 
     const filteredArticles = projectsData.filter((project) => {
         const content = project.projectName + project.projectDesc + project.tags
         return content.toLowerCase().includes(search.toLowerCase())
     })
+
+    const handleOpenModal = (demo) => {
+            setModalContent(demo); // Passa o demo para o modal
+            setOpenModal(true);    // Abre o modal
+    };
+
+    function getFormData(form) {
+    const elements = form.elements;
+    let honeypot;
+
+    const fields = Object.keys(elements)
+        .filter((k) => {
+        if (elements[k].name === 'honeypot') {
+            honeypot = elements[k].value;
+            return false;
+        }
+        return true;
+        })
+        .map((k) => {
+        if (elements[k].name !== undefined) return elements[k].name;
+        if (elements[k].length > 0) return elements[k].item(0).name;
+        })
+        .filter((item, pos, self) => self.indexOf(item) === pos && item);
+
+    const formData = {};
+    fields.forEach((name) => {
+        const element = elements[name];
+        formData[name] = element.value;
+
+        if (element.length) {
+        const data = [];
+        for (let i = 0; i < element.length; i++) {
+            const item = element.item(i);
+            if (item.checked || item.selected) {
+            data.push(item.value);
+            }
+        }
+        formData[name] = data.join(', ');
+        }
+    });
+
+    formData.formDataNameOrder = JSON.stringify(fields);
+    formData.formGoogleSheetName = form.dataset.sheet || 'responses';
+    formData.formGoogleSendEmail = form.dataset.email || '';
+
+    return { data: formData, honeypot: honeypot };
+    }
+
+    function handleFormSubmit(event, setSuccess) {
+    event.preventDefault();
+    setLoading(true);
+
+    const form = event.target;
+    const formData = getFormData(form);
+    const data = formData.data;
+
+    if (formData.honeypot) {
+      setLoading(false);
+      return false;
+
+    }
+    disableAllButtons(form);
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', form.action);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+        setLoading(false);
+        form.reset();
+        const thankYouMessage = form.querySelector('.thankyou_message');
+        if (thankYouMessage) thankYouMessage.style.display = 'block';
+        setSuccess(true);
+        
+        }
+    };
+
+    const encoded = Object.keys(data)
+        .map((k) => encodeURIComponent(k) + '=' + encodeURIComponent(data[k]))
+        .join('&');
+    xhr.send(encoded);
+    }
+
+    function disableAllButtons(form) {
+    const buttons = form.querySelectorAll('button');
+    buttons.forEach((btn) => (btn.disabled = true));
+    }
+
+     const downloadPDF = (driveViewLink) => {
+        if (!driveViewLink) return;
+
+        const match = driveViewLink.match(/\/d\/([a-zA-Z0-9_-]+)\//);
+        const fileId = match?.[1];
+
+        if (!fileId) return;
+
+        const downloadLink = `https://drive.google.com/uc?export=download&id=${fileId}`;
+        const link = document.createElement('a');
+        link.href = downloadLink;
+        link.download = 'report-soluises.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
 
     const useStyles = makeStyles((t) => ({
         search : {
@@ -68,6 +179,7 @@ function ProjectPage() {
     const classes = useStyles();
 
     return (
+        <>
         <div className="projectPage" style={{backgroundColor: theme.secondary}}>
 
             <div className="projectPage-header" style={{backgroundColor:theme.primary}}>
@@ -91,14 +203,76 @@ function ProjectPage() {
                                 desc={project.projectDesc}
                                 tags={project.tags}
                                 code={project.code}
-                                demo={project.demo}
+                                demo={project.code}
                                 image={project.image} 
+                                onDemoClick={handleOpenModal}
                             />
                         ))}
                    </Grid>
                </div>
-           </div>    
+
+           </div>  
+           <Modal isOpen={openModal} setModalOpen={setOpenModal} title="Diga quem você é para fazer download!">
+                        {!success ? (
+                      <form
+                        method="POST"
+                        data-email="comunidadesoluises@gmail.com"
+                        action="https://script.google.com/macros/s/AKfycbxdyIOuDNl0tglUVgeiZsVoCqwx6KSL5PvoRY1RKOei0ysJfEQGspy2DYcroijdwjIQkw/exec"
+                        className="queroser-form"
+                        onSubmit={(e) => handleFormSubmit(e, setSuccess)}
+                      >
+                        <div className="input-container">
+                          <label htmlFor="name">Nome</label>
+                          <input
+                            required
+                            placeholder="Digite seu nome"
+                            type="text"
+                            name="Nome"
+                            id="name"
+                          />
+                        </div>
+                
+                        <div className="input-container">
+                          <label htmlFor="email">E-mail</label>
+                          <input
+                            required
+                            placeholder="Digite seu e-mail"
+                            type="email"
+                            name="Email"
+                            id="email"
+                          />
+                        </div>
+                
+                
+                        <div className="submit-btn">
+                          <Button type="submit" className={classes.resumeBtn} disabled={loading}>
+                            {loading ? 'Enviando...' : 'Enviar'}
+                          </Button>
+                        </div>
+                      </form>) : 
+                      (
+                      <div className='queroser-grupo'>
+                            <p style={{ marginBottom: '1rem' }}>Baixe o Report Agora!</p>
+                              <Button
+                                className={classes.resumeBtn}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={() =>  
+                                {
+                                     downloadPDF(modalContent);
+                                     setOpenModal(false)
+                                }}
+                              >
+                                Baixar Report
+                              </Button>
+                      </div>
+                     )}     
+            </Modal>
+             
         </div>
+
+        
+        </>
     )
 }
 
