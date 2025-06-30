@@ -172,7 +172,7 @@ function Landing() {
                 >
                     <div
                         className='lcr--content'
-                        style={{ color: '#1E2230' }}
+                        style={{ color: theme.tertiary }}
                     >
 
                         <h1>{headerData.name}</h1>
