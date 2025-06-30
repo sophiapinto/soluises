@@ -23,28 +23,28 @@ export const testimonialsData = [
     {
         id: 2,
         name: 'Ellen Regine',
-        title: 'Membra da Comunidade SOLuíses',
-        text: " A convivência com profissionais diversos, engajados em transformar ideias em impacto, fortalece minha atuação com foco em experiência do usuário",
+        title: 'Membro da Comunidade SOLuíses',
+        text: " A convivência com profissionais diversos, engajados em transformar ideias em impacto, fortalece minha atuação com foco em experiência do usuário.",
         image: profile02
     },
     {
         id: 3,
         name: 'Marcos Aquino',
         title: 'Lider do Squad de Tecnologia',
-        text: "Soluíses conecta talentos em tecnologia, fomentando inovação e colaboração no Maranhão",
+        text: "Soluíses conecta talentos em tecnologia, fomentando inovação e colaboração no Maranhão.",
         image: profile04
     },
     {
         id: 4,
         name: 'Bruno Nunes',
         title: 'Membro do Squad de Tecnologia',
-        text: "Aqui, colaboro diariamente para transformar ideias em projetos reais, fortalecendo o ecossistema tecnológico e criativo do Maranhão",
+        text: "Aqui, colaboro diariamente para transformar ideias em projetos reais, fortalecendo o ecossistema tecnológico e criativo do Maranhão.",
         image: profile03
     },
     {
         id: 5,
-        name: 'Sarah Sophia',
-        title: 'Membra do Time de Tecnologia',
+        name: 'Sarah Sophia Pinto',
+        title: 'Membro do Squad de Tecnologia',
         text: 'Soluíses fortalece inovação e tecnologia, unindo engenharia, criatividade e impacto real.',
         image: profile05
     }
