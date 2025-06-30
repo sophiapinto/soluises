@@ -154,7 +154,7 @@ function Landing() {
             <div className='landing--container'>
                 <div
                     className='landing--container-left'
-                    style={{ backgroundColor: '#1E2230' }}
+                    style={{ backgroundColor: '#ffffff' }}
                 >
                 </div>
                 <img
@@ -168,7 +168,7 @@ function Landing() {
                 />
                 <div
                     className='landing--container-right'
-                    style={{ backgroundColor: theme.secondary }}
+                    style={{ backgroundColor: '#1E2230' }}
                 >
                     <div
                         className='lcr--content'
