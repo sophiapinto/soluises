@@ -1,16 +1,16 @@
-body, .landing {
-  margin: 0;
-  padding: 0;
+.landing {
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.landing {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
+.landing--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100%;
-  background-color: #eaeaea; /* Cor desejada */
+  position: relative;
 }
 
 .landing--img {
