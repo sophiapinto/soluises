@@ -9,10 +9,10 @@ import seven from '../assets/report/report-13.jpeg';
 export const projectsData = [
     {
         id: 1,
-        projectName: 'Report 07',
-        projectDesc: 'Edição Nº7 com ISBN: 978-65-00-38759-9 ',
+        projectName: 'Report 14',
+        projectDesc: 'Edição Nº7',
         tags: ['Comunidade' , 'Desenvolvimento'],
-        code: 'https://drive.google.com/file/d/1xMXeZApjrYGzWDEBjCACLkhDBUifG7nS/view',
+        code: 'https://drive.google.com/file/d/1Y558KNcYPCOCN4tFHCRBOj_Y7ZJGARYx/view',
         demo: 'download',
         image: one
     },
@@ -70,6 +70,15 @@ export const projectsData = [
         demo: 'download',
         image: seven
     },
+    {
+        id: 8,
+        projectName: 'Report 07',
+        projectDesc: 'Edição Nº7 com ISBN: 978-65-00-38759-9 ',
+        tags: ['Comunidade' , 'Desenvolvimento'],
+        code: 'https://drive.google.com/file/d/1xMXeZApjrYGzWDEBjCACLkhDBUifG7nS/view',
+        demo: 'download',
+        image: one
+    }
     ]
 
 
