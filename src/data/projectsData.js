@@ -1,10 +1,11 @@
-import one from '../assets/report/report-07.jpeg';
+import one from '../assets/report/report-14.png';
 import two from '../assets/report/report-08.jpeg';
 import three from '../assets/report/report-09.jpeg';
 import four from '../assets/report/report-10.jpeg';
 import five from '../assets/report/report-11.jpeg';
 import six from '../assets/report/report-12.jpeg';
 import seven from '../assets/report/report-13.jpeg';
+import eith from '../assets/report/report-07.jpeg';
 
 export const projectsData = [
     {
@@ -77,7 +78,7 @@ export const projectsData = [
         tags: ['Comunidade' , 'Desenvolvimento'],
         code: 'https://drive.google.com/file/d/1xMXeZApjrYGzWDEBjCACLkhDBUifG7nS/view',
         demo: 'download',
-        image: one
+        image: eith
     }
     ]
 
