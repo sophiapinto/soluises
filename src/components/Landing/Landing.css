@@ -55,7 +55,7 @@
 .landing--container-right {
   flex: 65%;
   height: 100%;
-  background-color: #eaeaea;
+  background-color: #1E2230;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -188,7 +188,7 @@
     flex: initial;
     height: 70%;
     width: 100%;
-    background-color: #eaeaea;
+    background-color: #1E2230;
     align-items: center;
     justify-content: center;
     padding: 0 2rem;

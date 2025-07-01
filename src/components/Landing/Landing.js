@@ -168,7 +168,7 @@ function Landing() {
                 />
                 <div
                     className='landing--container-right'
-                    style={{ backgroundColor: theme.secondary }}
+                    style={{ backgroundColor: '#1E2230' }}
                 >
                     <div
                         className='lcr--content'
