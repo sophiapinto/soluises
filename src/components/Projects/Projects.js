@@ -224,6 +224,7 @@ function Projects() {
                         className="queroser-form"
                         onSubmit={(e) => handleFormSubmit(e, setSuccess)}
                         >
+                    <div className="form-row">
                         <div className="input-container">
                             <label htmlFor="name">Nome</label>
                             <input
@@ -291,6 +292,7 @@ function Projects() {
                             id="profissao"
                             />
                         </div>
+                    </div>
                         <div className="submit-btn">
                             <Button type="submit" className={classes.resumeBtn} disabled={loading}>
                             {loading ? 'Enviando...' : 'Enviar'}
