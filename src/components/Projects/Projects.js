@@ -217,43 +217,86 @@ function Projects() {
                     </div>
                     <Modal isOpen={openModal} setModalOpen={(value) => {  if (!loading) setOpenModal(value); }} title={  success?  '' : 'Diga quem você é para fazer o download!'} isLoading={loading}>
                         {!success ? (
-                      <form
+                        <form
                         method="POST"
                         data-email="comunidadesoluises@gmail.com"
                         action="https://script.google.com/macros/s/AKfycbxdyIOuDNl0tglUVgeiZsVoCqwx6KSL5PvoRY1RKOei0ysJfEQGspy2DYcroijdwjIQkw/exec"
                         className="queroser-form"
                         onSubmit={(e) => handleFormSubmit(e, setSuccess)}
-                      >
+                        >
                         <div className="input-container">
-                          <label htmlFor="name">Nome</label>
-                          <input
+                            <label htmlFor="name">Nome</label>
+                            <input
                             required
-                            placeholder="Digite seu nome"
+                            placeholder="Digite seu nome como deseja ser chamado(a/e) pela comunidade"
                             type="text"
                             name="Nome"
                             id="name"
-                          />
+                            />
                         </div>
-                
                         <div className="input-container">
-                          <label htmlFor="email">E-mail</label>
-                          <input
+                            <label htmlFor="telefone">Telefone</label>
+                            <input
                             required
-                            placeholder="Digite seu e-mail"
-                            type="email"
-                            name="Email"
-                            id="email"
-                          />
+                            placeholder="Informe o número com DDD"
+                            type="tel"
+                            name="Telefone"
+                            id="telefone"
+                            pattern="\(?\d{2}\)?\s?\d{4,5}-?\d{4}"
+                            title="Informe um telefone válido com DDD"
+                            />
                         </div>
-                        
-                
-                
+                        <div className="input-container">
+                            <label htmlFor="cidade">Cidade/UF</label>
+                            <input
+                            required
+                            placeholder="Ex: São Luís/MA"
+                            type="text"
+                            name="CidadeUF"
+                            id="cidade"
+                            />
+                        </div>
+                        <div className="input-container">
+                            <label htmlFor="raca">Raça/cor</label>
+                            <select required name="RacaCor" id="raca">
+                            <option value="">Selecione</option>
+                            <option value="Preta">Preta</option>
+                            <option value="Parda">Parda</option>
+                            <option value="Branca">Branca</option>
+                            <option value="Amarela">Amarela</option>
+                            <option value="Indígena">Indígena</option>
+                            <option value="Prefiro não dizer">Prefiro não dizer</option>
+                            </select>
+                        </div>
+                        <div className="input-container">
+                            <label htmlFor="genero">Gênero</label>
+                            <select required name="Genero" id="genero">
+                            <option value="">Selecione</option>
+                            <option value="Mulher cis">Mulher cis</option>
+                            <option value="Mulher trans">Mulher trans</option>
+                            <option value="Homem cis">Homem cis</option>
+                            <option value="Homem trans">Homem trans</option>
+                            <option value="Pessoa não-binária">Pessoa não-binária</option>
+                            <option value="Outro">Outro</option>
+                            <option value="Prefiro não dizer">Prefiro não dizer</option>
+                            </select>
+                        </div>
+                        <div className="input-container">
+                            <label htmlFor="profissao">Profissão ou área de atuação</label>
+                            <input
+                            required
+                            placeholder="Ex: Engenheira de Software"
+                            type="text"
+                            name="ProfissaoArea"
+                            id="profissao"
+                            />
+                        </div>
                         <div className="submit-btn">
-                          <Button type="submit" className={classes.resumeBtn} disabled={loading}>
+                            <Button type="submit" className={classes.resumeBtn} disabled={loading}>
                             {loading ? 'Enviando...' : 'Enviar'}
-                          </Button>
+                            </Button>
                         </div>
-                      </form>) : 
+                        </form>) : 
                       (
                       <div className='queroser-grupo'>
                           
